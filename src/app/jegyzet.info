@@ -1,0 +1,9 @@
+cmd-ben
+cd holloinfo
+ng serve --open
+
+giten keresd angular-cli
+story link alatt különböző kiegészítőket tudsz hozzáadni
+már hozzáadva bootstrap, font-awesome
+
+generate link alatt új component hozzáadása a honlaphoz
