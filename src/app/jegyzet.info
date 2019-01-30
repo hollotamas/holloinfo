@@ -23,4 +23,9 @@ element () --> Események [] --> Properties (tulajdonság)
 <button (click)="esemeny()" [disabled] = "bekapcs">Gomb</button>
 
 Itt tartok:
-Első projekt és Component-ek III. rész 26 perc
+Első projekt és Component-ek III. rész 40 perc
+
+A nem működik a bootstrap collapse, dropdown
+Megoldás:
+https://valor-software.com/ngx-bootstrap/#/collapse
+https://valor-software.com/ngx-bootstrap/#/dropdowns
