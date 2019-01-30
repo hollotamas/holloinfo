@@ -10,5 +10,17 @@ font-awesome kiegészítve, webfonts és all.css
 
 generate link alatt új component hozzáadása a honlaphoz
 
+src/style.css globális css
+component.css adott lokális css
+
+https://angular.io/guide/displaying-data lista megjeleínése HTML listában,
+*ngFor, de itt van példa a *ngIf
+
+Események kezelése:
+https://angular.io/guide/user-input
+
+element () --> Események [] --> Properties (tulajdonság)
+<button (click)="esemeny()" [disabled] = "bekapcs">Gomb</button>
+
 Itt tartok:
-Első projekt és Component-ek I. rész 1:12
+Első projekt és Component-ek III. rész 26 perc
