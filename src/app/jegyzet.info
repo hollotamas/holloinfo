@@ -29,3 +29,27 @@ A nem működik a bootstrap collapse, dropdown
 Megoldás:
 https://valor-software.com/ngx-bootstrap/#/collapse
 https://valor-software.com/ngx-bootstrap/#/dropdowns
+
+Itt tartok:
+Alap építő elemek I. rész 34 perc
+json tömb deklarlása szűrrése, megjelenítése
+input tartalom átadás 38-40 perc
+
+Spread operator ...args 55 perc
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+
+Paraméter átadás class példányosításakor
+Object.assign constructor(param: model) 59 perc
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+
+reduce() vissza add egy függvény által meghatározott értéket egy listából 1:22 perc
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+
+Itt tartok:
+Alap építő elemek II. rész 0:13:00
+Refaktor --> Javítom a konstruktor paramétereit később, akkor bárhol használtam javítja a hivásokat is.
+Példa az űrlap szerkesztésre Mentés, Törlés, Szerkesztés.
+
+0:47:00 környékén
+pipe beszúrás
+https://angular.io/guide/pipes
