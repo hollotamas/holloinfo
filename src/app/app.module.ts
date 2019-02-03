@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { FejlecComponent } from './fejlec/fejlec.component';
 import { MenuComponent } from './menu/menu.component';
 import { TartalomComponent } from './tartalom/tartalom.component';
+import { ErettsegiComponent } from './tartalom/erettsegi/erettsegi.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FejlecComponent,
     MenuComponent,
-    TartalomComponent
+    TartalomComponent,
+    ErettsegiComponent
   ],
   imports: [
     BrowserModule,
