@@ -8,15 +8,12 @@ import { AppComponent } from './app.component';
 import { FejlecComponent } from './fejlec/fejlec.component';
 import { MenuComponent } from './menu/menu.component';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
     FejlecComponent,
     MenuComponent,
-    ...AppRoutingModule.routTableComponent
+    ...AppRoutingModule.routTableComponent,
   ],
   imports: [
     BrowserModule,
