@@ -9,6 +9,7 @@ import { FejlecComponent } from './fejlec/fejlec.component';
 import { MenuComponent } from './menu/menu.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -62,4 +62,6 @@ Na, csináljuk már! I. rész
 Routing elmélet szarul
 
 00:54:00
-home component - ami nem állandó azt kiszervezte. A home lesz a nyitó oldal
+tartalom component - ami nem állandó azt kiszervezte. A tartalom lesz a nyitó oldal
+
+01:05:00 Itt tartok. Működika routing modul és a tartalom beszúrva a routing-outlet-be.
