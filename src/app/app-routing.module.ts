@@ -6,6 +6,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 const routes: Routes = [
   {path: 'tartalom', component: TartalomComponent},
+  {path: 'erettsegi', component: ErettsegiComponent},
+  {path: '', redirectTo: '/tartalom', pathMatch: 'full' },
   {path: '**', component: PageNotFoundComponent}
 ];
 
