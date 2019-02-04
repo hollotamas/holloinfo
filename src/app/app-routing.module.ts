@@ -3,10 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { TartalomComponent } from './tartalom/tartalom.component';
 import { ErettsegiComponent } from './tartalom/erettsegi/erettsegi.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   {path: 'tartalom', component: TartalomComponent},
   {path: 'erettsegi', component: ErettsegiComponent},
+  {path: 'about', component: AboutComponent},
   {path: '', redirectTo: '/tartalom', pathMatch: 'full' },
   {path: '**', component: PageNotFoundComponent}
 ];
@@ -19,6 +21,7 @@ export class AppRoutingModule {
   static routTableComponent = [
     TartalomComponent,
     ErettsegiComponent,
+    AboutComponent,
     PageNotFoundComponent
   ];
 }
