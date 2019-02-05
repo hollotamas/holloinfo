@@ -13,7 +13,7 @@
   <div class="collapse navbar-collapse" id="fomenu" [collapse]="isCollapsed">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/erettsegi" role="button">
+        <a class="nav-link" routerLink="/erettsegi/tipus" role="button">
           Érettségi feladatok megoldása
         </a>
       </li>
@@ -36,7 +36,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" role="button">
+        <a class="nav-link" [routerLink]="['/erettsegi',1,'list']" role="button">
           Hasznos linkek
         </a>
       </li>
