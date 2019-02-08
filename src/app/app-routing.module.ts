@@ -7,6 +7,7 @@ import { ErettsegiTipusListComponent } from './erettsegi/erettsegi-tipus-list/er
 import { ErettsegiPostComponent } from './erettsegi/erettsegi-post/erettsegi-post.component';
 import { AboutComponent } from './about/about.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
+import { ErettsegiDetailComponent } from './erettsegi/erettsegi-detail/erettsegi-detail.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,9 @@ const routes: Routes = [
    children: [
      {path: 'tipus', component: ErettsegiTipusComponent},
      {path: ':tipusID/list', component: ErettsegiTipusListComponent},
-     {path: ':tipusID/:postID/post', component: ErettsegiPostComponent}
+     {path: ':tipusID/:postID/post', component: ErettsegiPostComponent},
+     {path: 'new', component: ErettsegiDetailComponent},
+     {path: ':tipusID/:postID/edit', component: ErettsegiDetailComponent}
    ]},
   {path: 'about', component: AboutComponent},
   {path: '', redirectTo: '/tartalom', pathMatch: 'full' },
@@ -33,6 +36,7 @@ export class AppRoutingModule {
     ErettsegiTipusComponent,
     ErettsegiTipusListComponent,
     ErettsegiPostComponent,
+    ErettsegiDetailComponent,
     AboutComponent
   ];
 }

@@ -9,6 +9,7 @@ import { FejlecComponent } from './core/fejlec/fejlec.component';
 import { MenuComponent } from './core/menu/menu.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
