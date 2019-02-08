@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TartalomComponent } from './tartalom/tartalom.component';
 import { ErettsegiComponent } from './erettsegi/erettsegi.component';
-import { ErettsegiTipusComponent } from './erettsegi-tipus/erettsegi-tipus.component';
-import { ErettsegiTipusListComponent } from './erettsegi-tipus-list/erettsegi-tipus-list.component';
-import { ErettsegiPostComponent } from './erettsegi-post/erettsegi-post.component';
+import { ErettsegiTipusComponent } from './erettsegi/erettsegi-tipus/erettsegi-tipus.component';
+import { ErettsegiTipusListComponent } from './erettsegi/erettsegi-tipus-list/erettsegi-tipus-list.component';
+import { ErettsegiPostComponent } from './erettsegi/erettsegi-post/erettsegi-post.component';
 import { AboutComponent } from './about/about.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
+
 
 const routes: Routes = [
   {path: 'tartalom', component: TartalomComponent},
@@ -32,7 +33,6 @@ export class AppRoutingModule {
     ErettsegiTipusComponent,
     ErettsegiTipusListComponent,
     ErettsegiPostComponent,
-    AboutComponent,
-    PageNotFoundComponent
+    AboutComponent
   ];
 }

@@ -5,8 +5,9 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FejlecComponent } from './fejlec/fejlec.component';
-import { MenuComponent } from './menu/menu.component';
+import { FejlecComponent } from './core/fejlec/fejlec.component';
+import { MenuComponent } from './core/menu/menu.component';
+import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { MenuComponent } from './menu/menu.component';
     FejlecComponent,
     MenuComponent,
     ...AppRoutingModule.routTableComponent,
+   PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -72,3 +72,7 @@ kezdőoldal megadásáa a routingban.
 Itt tartok:
 Na, csináljuk már! II. rész
 00:11:56 Gyermek tartalom componenten belül Pl: Szövegszerkesztés gyermekei a szövegszerkesztés posztok
+00:28:00 router-outlet több egy oldalon name tulajdonsággal fűszerezve röviden.
+00:48:00 Felhasználó rész létrehozása. Bekötötte a user logikáját
+00:58:00 Kialakította a jegy vásárlás list és eladás struktúrát is.
+01:04:00 Refaktor -  könyvtár struktúra átrendezése
