@@ -8,6 +8,10 @@ import { ErettsegiPostComponent } from './erettsegi/erettsegi-post/erettsegi-pos
 import { AboutComponent } from './about/about.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 import { ErettsegiDetailComponent } from './erettsegi/erettsegi-detail/erettsegi-detail.component';
+import { UserLoginComponent } from './user/user-login/user-login.component';
+import { UserProfilComponent } from './user/user-profil/user-profil.component';
+import { UserProfilEditComponent } from './user/user-profil-edit/user-profil-edit.component';
+import { UserRegistrationComponent } from './user-registration/user-registration.component';
 
 
 const routes: Routes = [
@@ -16,10 +20,17 @@ const routes: Routes = [
    children: [
      {path: 'tipus', component: ErettsegiTipusComponent},
      {path: ':tipusID/list', component: ErettsegiTipusListComponent},
+     {path: ':tipusID/new', component: ErettsegiDetailComponent},
      {path: ':tipusID/:postID/post', component: ErettsegiPostComponent},
-     {path: 'new', component: ErettsegiDetailComponent},
      {path: ':tipusID/:postID/edit', component: ErettsegiDetailComponent}
    ]},
+  {path: 'user',
+   children: [
+     {path: '', component: UserProfilComponent},
+     {path: 'login', component: UserLoginComponent},
+     {path: 'edit', component: UserProfilEditComponent}
+   ]},
+  {path: 'registration', component: UserRegistrationComponent},
   {path: 'about', component: AboutComponent},
   {path: '', redirectTo: '/tartalom', pathMatch: 'full' },
   {path: '**', component: PageNotFoundComponent}
@@ -37,6 +48,10 @@ export class AppRoutingModule {
     ErettsegiTipusListComponent,
     ErettsegiPostComponent,
     ErettsegiDetailComponent,
+    UserLoginComponent,
+    UserProfilComponent,
+    UserProfilEditComponent,
+    UserRegistrationComponent,
     AboutComponent
   ];
 }
