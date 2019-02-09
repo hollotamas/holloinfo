@@ -76,3 +76,4 @@ Na, csináljuk már! II. rész
 00:48:00 Felhasználó rész létrehozása. Bekötötte a user logikáját
 00:58:00 Kialakította a jegy vásárlás list és eladás struktúrát is.
 01:04:00 Refaktor -  könyvtár struktúra átrendezése
+01:16:00 routerLinkActive="active" a navbarban a bootstrap activ tulajdonságát ráteszi az látogatott menüre.
