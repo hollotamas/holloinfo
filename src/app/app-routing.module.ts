@@ -8,10 +8,12 @@ import { ErettsegiPostComponent } from './erettsegi/erettsegi-post/erettsegi-pos
 import { AboutComponent } from './about/about.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 import { ErettsegiDetailComponent } from './erettsegi/erettsegi-detail/erettsegi-detail.component';
+import { ErettsegiTanacsokComponent } from './erettsegi/erettsegi-tanacsok/erettsegi-tanacsok.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserProfilComponent } from './user/user-profil/user-profil.component';
 import { UserProfilEditComponent } from './user/user-profil-edit/user-profil-edit.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
+
 
 
 const routes: Routes = [
@@ -19,6 +21,7 @@ const routes: Routes = [
   {path: 'erettsegi', component: ErettsegiComponent,
    children: [
      {path: 'tipus', component: ErettsegiTipusComponent},
+     {path: 'tanacsok', component: ErettsegiTanacsokComponent},
      {path: ':tipusID/list', component: ErettsegiTipusListComponent},
      {path: ':tipusID/new', component: ErettsegiDetailComponent},
      {path: ':tipusID/:postID/post', component: ErettsegiPostComponent},
@@ -48,6 +51,7 @@ export class AppRoutingModule {
     ErettsegiTipusListComponent,
     ErettsegiPostComponent,
     ErettsegiDetailComponent,
+    ErettsegiTanacsokComponent,
     UserLoginComponent,
     UserProfilComponent,
     UserProfilEditComponent,
