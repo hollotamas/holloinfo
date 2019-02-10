@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ErettsegiService } from '../../shared/erettsegi.service';
+import { ErettsegiModel } from '../../shared/erettsegi-model';
 
 @Component({
   selector: 'app-erettsegi-tipus-list',
@@ -6,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./erettsegi-tipus-list.component.css']
 })
 export class ErettsegiTipusListComponent implements OnInit {
+  public erettsegi: ErettsegiModel[];
 
-  constructor() { }
+  constructor(private _erettsegiService: ErettsegiService) {
+    this.erettsegi = this._erettsegiService.getAllErettsegi();
+    console.log(this.erettsegi);
+  }
 
   ngOnInit() {
   }

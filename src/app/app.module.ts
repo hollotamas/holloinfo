@@ -8,9 +8,8 @@ import { AppComponent } from './app.component';
 import { FejlecComponent } from './core/fejlec/fejlec.component';
 import { MenuComponent } from './core/menu/menu.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
-
-
-
+import { ErettsegiService } from './shared/erettsegi.service';
+import { ErettsegiTipusListCardComponent } from './erettsegi/erettsegi-tipus-list-card/erettsegi-tipus-list-card.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,8 @@ import { PageNotFoundComponent } from './core/page-not-found/page-not-found.comp
     FejlecComponent,
     MenuComponent,
     ...AppRoutingModule.routTableComponent,
-   PageNotFoundComponent
+    ErettsegiTipusListCardComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +26,7 @@ import { PageNotFoundComponent } from './core/page-not-found/page-not-found.comp
     CollapseModule.forRoot(),
     BsDropdownModule.forRoot()
   ],
-  providers: [],
+  providers: [ErettsegiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

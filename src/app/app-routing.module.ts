@@ -15,7 +15,6 @@ import { UserProfilEditComponent } from './user/user-profil-edit/user-profil-edi
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 
 
-
 const routes: Routes = [
   {path: 'tartalom', component: TartalomComponent},
   {path: 'erettsegi', component: ErettsegiComponent,

@@ -77,3 +77,11 @@ Na, csináljuk már! II. rész
 00:58:00 Kialakította a jegy vásárlás list és eladás struktúrát is.
 01:04:00 Refaktor -  könyvtár struktúra átrendezése
 01:16:00 routerLinkActive="active" a navbarban a bootstrap activ tulajdonságát ráteszi az látogatott menüre.
+01:25:00 A fejléc oldalakhoz rendelése <ng-content> valamint <ng-content select=""> a fejlévben lévő elemek kiválasztása.
+
+Itt tartok:
+Formok, Servicek és építkezés I. rész
+00:18:00 Service kezdetek elmélet nem értettem semmit 00:25-ig
+00:25:15 sevice generálás
+00:30 ErettsegiModel osztály létrehozása konstruktor parameterezése
+00:45 Service konstruktorának feltöltése mokka adatokkal (mokka adat, amelyik nem dinamikus, hanem beégetett csak amíg a programstruktúra készül.)
