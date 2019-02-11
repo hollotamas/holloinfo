@@ -85,3 +85,4 @@ Formok, Servicek és építkezés I. rész
 00:25:15 sevice generálás
 00:30 ErettsegiModel osztály létrehozása konstruktor parameterezése
 00:45 Service konstruktorának feltöltése mokka adatokkal (mokka adat, amelyik nem dinamikus, hanem beégetett csak amíg a programstruktúra készül.)
+01:00:00 Az érettségi lista feltöltése service ngFor segítségével a mokka adatokkal remélhetőleg

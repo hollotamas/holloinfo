@@ -9,6 +9,7 @@ import { FejlecComponent } from './core/fejlec/fejlec.component';
 import { MenuComponent } from './core/menu/menu.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 import { ErettsegiService } from './shared/erettsegi.service';
+import { ErettsegiTipusComponent } from './erettsegi/erettsegi-tipus/erettsegi-tipus.component';
 import { ErettsegiTipusListCardComponent } from './erettsegi/erettsegi-tipus-list-card/erettsegi-tipus-list-card.component';
 
 @NgModule({
@@ -17,6 +18,7 @@ import { ErettsegiTipusListCardComponent } from './erettsegi/erettsegi-tipus-lis
     FejlecComponent,
     MenuComponent,
     ...AppRoutingModule.routTableComponent,
+    ErettsegiTipusComponent,
     ErettsegiTipusListCardComponent,
     PageNotFoundComponent
   ],
