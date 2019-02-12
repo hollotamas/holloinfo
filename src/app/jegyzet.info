@@ -84,5 +84,20 @@ Formok, Servicek és építkezés I. rész
 00:18:00 Service kezdetek elmélet nem értettem semmit 00:25-ig
 00:25:15 sevice generálás
 00:30 ErettsegiModel osztály létrehozása konstruktor parameterezése
-00:45 Service konstruktorának feltöltése mokka adatokkal (mokka adat, amelyik nem dinamikus, hanem beégetett csak amíg a programstruktúra készül.)
-01:00:00 Az érettségi lista feltöltése service ngFor segítségével a mokka adatokkal remélhetőleg
+00:45 Service konstruktorának feltöltése mokka adatokkal (mokk adat, amelyik nem dinamikus, hanem beégetett csak amíg a programstruktúra készül.)
+01:00:00 Az érettségi lista feltöltése service ngFor segítségével a mokk adatokkal remélhetőleg
+01:10:00 környékén a sevice bekötése zajlik és az ErettsegiModel erettsegi-t-l-cardban megjelnítéséhez szükséges ismeretek
+
+Összefoglalás:
+1. Service létrehozása - ő fogja szolgáltatni majd az adatokat a componentnek
+2. A service importálasra kerül az app.modul.ts.be és bejegyzésre a providers tömbbe.
+3. A megjelenítendő adat modelje egy osztály, amely megfelel az adatbázisban szereplő adatoknak (erettsegi-model.ts)
+4. Az erettsegi.service.ts feladata, hogy bárhonnan is megszerezze a modelnek megfelelő adatokat és egy pl: getAll..() függvénnyel majd odaadja annak aki kéri.
+5. Az első felhasználója az adatoknak az erettsegi-tipus-list.component.ts, akinek importálnia kell a service-t és a modelt is.
+6. Majd példányosítani egy publikus tömböt, amely erettsegiModel osztályba tartozik.
+7. Valamint a konstruktorában feltölteni a tömböt (erettsegi) a getAll..() függvény segítségével.
+8. Az erettsegi-tipus-list.component.html ezek után már egy jól elhelyezett *ngFor segítségével ki tudja venni a tömbből az adatokat
+9. és át tudja adni egyesével az adatokat megjelenítő erettsegi-tipus-list-card.componentnek.
+10. Az adat megjelenítő component (erettsegi-tipus-list-card.component.ts) egyszerre egy adatot kap az *ngFor miatt, de ezt fogania kell.
+11. Ezért a erettsegi-tipus-list-card.component.ts-ben kell egy @Input és a hozzá tartozó import.
+12. Ha fogadtuk az adatokat, akkor már a {{}} szerkezettben a megfelelő adathivatkozással megjelenik az adat.
