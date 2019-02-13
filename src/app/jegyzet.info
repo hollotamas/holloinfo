@@ -111,4 +111,11 @@ Formok, Servicek és építkezés II. rész
 00:12:00 Ál Belépés és kilépés a userrel
 
 Itt tartok
-00:26:00
+00:26:00 Regisztráció is elkészül
+
+Itt tartok:
+00:39:00 Bootstrap Alertek használata
+Nagy nehezen rávettük a login-component-t, hogy hiba esetés alert boxot jelenítsen meg.
+
+Itt tartok:
+01:04:00 Menü elemek megjelenítése és eltüntetése a bejelentkezéstől függően 01:14-ig

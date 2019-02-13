@@ -57,6 +57,7 @@
           Magamról
         </a>
       </li>
+      <ng-container *ngIf="!_userService.isLoggedIn; else loggedBlock">
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/user/login" role="button">
           Belépés
@@ -67,9 +68,16 @@
           Regisztráció
         </a>
       </li>
+      </ng-container>
+      <ng-template #loggedBlock>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" (click)="logout()">
+          <!-- <i class="fas fa-sign-out-alt sotetkek fa-lg"></i> -->
+          Kilépés
+        </a>
+      </li>
+      </ng-template>
   </ul>
   </div>
-  <a class="navbar-brand float-right" routerLinkActive="active" (click)="logout()">
-    <i class="fas fa-sign-out-alt sotetkek fa-lg"></i>
-  </a>
+
 </nav>

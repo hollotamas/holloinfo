@@ -6,7 +6,7 @@ import { UserModel } from './user-model';
   providedIn: 'root'
 })
 export class UserService {
-  isLoggedIn = false;
+  public isLoggedIn = false;
   private _user: UserModel;
 
   constructor(private _router: Router) { }
@@ -17,8 +17,10 @@ export class UserService {
       this._user = new UserModel(UserModel.peldaUser);
       this.isLoggedIn = true;
       this._router.navigate(['/user']);
+      return true;
+    } else {
+      return false;
     }
-    return false;
   }
 
   logout():void {

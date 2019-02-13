@@ -7,6 +7,7 @@ import { UserService} from '../../shared/user.service';
   styleUrls: ['./user-login.component.css']
 })
 export class UserLoginComponent implements OnInit {
+  public error: string;
 
   constructor(private _userService: UserService) { }
 
@@ -14,8 +15,12 @@ export class UserLoginComponent implements OnInit {
   }
 
   login(email: string, password: string) {
-    this._userService.login(email, password);
+    if (!this._userService.login(email, password)) {
+      this.error = "Bejelentkezési hiba!!!";
+    }
   }
 
-
+  clearError(): void {
+    delete(this.error);
+  }
 }
