@@ -27,4 +27,15 @@ export class UserService {
     this._router.navigate(['/tartalom'])
   }
 
+  regisztracio(param?: UserModel): boolean {
+    if (param) {
+      this._user = new UserModel(param);
+    } else {
+      this._user = new UserModel(UserModel.peldaUser);
+    }
+    this.isLoggedIn = true;
+    this._router.navigate(['/user']);
+    return true;
+  }
+
 }
