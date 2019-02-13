@@ -20,43 +20,43 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Libre Baskerville', serif !important;
 }
 /* Színek */
-.sotetkekhatter {
+.sotetkekhatter, .btn-primary, .bg-primary {
   background-color: #090934;
 }
 
-.sotetkek {
+.sotetkek, .text-primary {
   color: #090934;
 }
 
-.vilagoskekhatter {
+.vilagoskekhatter, .btn-light, .bg-light {
   background-color: #e5faf4;
 }
 
-.vilagoskek {
+.vilagoskek, .text-light {
   color: #e5faf4;
 }
 
-.kozepZoldhatter {
+.kozepZoldhatter, .btn-success, .bg-info {
   background-color: #336b59;
 }
 
-.kozepZold {
+.kozepZold, .text-success {
   color: #336b59;
 }
 
-.kozepBarnahatter {
+.kozepBarnahatter, .btn-info, .bg-info {
   background-color: #ae8e6b;
 }
 
-.kozepBarna {
+.kozepBarna, .text-info {
   color: #ae8e6b;
 }
 
-.kozepKekhatter {
+.kozepKekhatter, .btn-secondary, .bg-secondary {
   background-color: #8181ee;
 }
 
-.kozepKek {
+.kozepKek, .text-secondary {
   color: #8181ee;
 }
 

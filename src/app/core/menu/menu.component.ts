@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { UserService } from '../../shared/user.service';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
   public isCollapsed = true;
-  constructor() { }
+  constructor(public _userService: UserService) { }
 
   ngOnInit() {
   }
 
+  logout() {
+    this._userService.logout();
+  }
 }
