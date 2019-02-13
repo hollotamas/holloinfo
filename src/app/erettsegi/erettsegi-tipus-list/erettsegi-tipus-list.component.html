@@ -1,12 +1,14 @@
 <app-erettsegi-tipus></app-erettsegi-tipus>
-<div class="row px-2">
+<div class="row px-4">
     <button type="button" name="button" routerLink="/erettsegi/new">New post</button>
 </div>
-<div class="row px-2">
-    <app-erettsegi-tipus-list-card class="col-sm-6 col-md-4 col-lg-3 p-1"
-                                   *ngFor="let er of erettsegi"
-                                   [_erettsegi] = "er"
+<div class="card-deck">
+  <div class="card-deck px-4" *ngFor="let erCsop of erettsegiCsoport3">
+    <app-erettsegi-tipus-list-card class="col col-sm-6 col-md-4 col-lg-3 px-1 pb-2"
+                                   *ngFor="let er of erCsop"
+                                   [_post] = "er"
     ></app-erettsegi-tipus-list-card>
+  </div>
     <!--     <app-erettsegi-tipus-list-card class="col-sm-6 col-md-4 col-lg-3 p-1">
     </app-erettsegi-tipus-list-card>
     <app-erettsegi-tipus-list-card class="col-sm-6 col-md-4 col-lg-3 p-1">
@@ -14,6 +16,6 @@
     <app-erettsegi-tipus-list-card class="col-sm-6 col-md-4 col-lg-3 p-1">
     </app-erettsegi-tipus-list-card> -->
   </div>
-  <div class="row px-2">
+  <div class="row px-4">
     <button type="button" name="button" routerLink="/erettsegi/new">New post</button>
   </div>

@@ -6,7 +6,7 @@ import { ErettsegiModel } from '../../shared/erettsegi-model';
   styleUrls: ['./erettsegi-tipus-list-card.component.css']
 })
 export class ErettsegiTipusListCardComponent implements OnInit {
-  @Input() _erettsegi: ErettsegiModel;
+  @Input() _post: ErettsegiModel;
   constructor() { }
 
   ngOnInit() {

@@ -101,3 +101,6 @@ Formok, Servicek és építkezés I. rész
 10. Az adat megjelenítő component (erettsegi-tipus-list-card.component.ts) egyszerre egy adatot kap az *ngFor miatt, de ezt fogania kell.
 11. Ezért a erettsegi-tipus-list-card.component.ts-ben kell egy @Input és a hozzá tartozó import.
 12. Ha fogadtuk az adatokat, akkor már a {{}} szerkezettben a megfelelő adathivatkozással megjelenik az adat.
+
+Itt tartok: 01:16:00 Itt publikálja a csávó azt amit leírtam és elkészített.
+01:20:00 környékén reduce vagyis egy tömb elemeinek átstruktúrálása. (erettsegi-tipus-list.componnt.ts)
