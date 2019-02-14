@@ -119,3 +119,7 @@ Nagy nehezen rávettük a login-component-t, hogy hiba esetés alert boxot jelen
 
 Itt tartok:
 01:04:00 Menü elemek megjelenítése és eltüntetése a bejelentkezéstől függően 01:14-ig
+
+Itt tartok:
+00:08:00 Környékén Az alap model kiegészítése más modellekből számazó adatokkal
+Például: Jegy adatai az alap model, de az eladó adatait a getAll() meghívásakor hozzáteszi

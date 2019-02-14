@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ErettsegiModel } from '../../shared/erettsegi-model';
+import { ErettsegiModel } from '../../shared/erettsegi/erettsegi-model';
 @Component({
   selector: 'app-erettsegi-tipus-list-card',
   templateUrl: './erettsegi-tipus-list-card.component.html',

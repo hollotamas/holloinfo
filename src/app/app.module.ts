@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { FejlecComponent } from './core/fejlec/fejlec.component';
 import { MenuComponent } from './core/menu/menu.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
-import { ErettsegiService } from './shared/erettsegi.service';
+import { ErettsegiService } from './shared/erettsegi/erettsegi.service';
 import { UserService } from './shared/user.service';
 import { ErettsegiTipusComponent } from './erettsegi/erettsegi-tipus/erettsegi-tipus.component';
 import { ErettsegiTipusListCardComponent } from './erettsegi/erettsegi-tipus-list-card/erettsegi-tipus-list-card.component';

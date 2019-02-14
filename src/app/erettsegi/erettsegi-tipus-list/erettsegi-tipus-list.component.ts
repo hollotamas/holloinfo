@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ErettsegiService } from '../../shared/erettsegi.service';
-import { ErettsegiModel } from '../../shared/erettsegi-model';
+import { ErettsegiService } from '../../shared/erettsegi/erettsegi.service';
+import { ErettsegiModel } from '../../shared/erettsegi/erettsegi-model';
 
 @Component({
   selector: 'app-erettsegi-tipus-list',
