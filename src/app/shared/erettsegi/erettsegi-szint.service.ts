@@ -6,6 +6,7 @@ import { ErettsegiSzintModel } from './erettsegi-szint-model';
 })
 export class ErettsegiSzintService {
   private _erettsegiSzint: ErettsegiSzintModel[];
+
   constructor() {
     this._erettsegiSzint = [
       {

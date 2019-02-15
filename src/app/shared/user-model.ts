@@ -21,4 +21,14 @@ export class UserModel {
       jogosultsag: 0
     };
   }
+
+  static get emptyUser(): UserModel {
+    return {
+      id:0,
+      name: '',
+      email: '',
+      cim: '',
+      jogosultsag: 0
+    };
+  }
 }

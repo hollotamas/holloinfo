@@ -122,6 +122,11 @@ Itt tartok:
 01:04:00 Menü elemek megjelenítése és eltüntetése a bejelentkezéstől függően 01:14-ig
 
 Itt tartok:
+Kommunikáció, navigálás és masni a projektünkre I. rész
 00:08:00 Környékén Az alap model kiegészítése más modellekből számazó adatokkal
 Például: Jegy adatai az alap model, de az eladó adatait a getAll() meghívásakor hozzáteszi
 Nem haladtama videóval, viszont megoldottam az érettségi-tipus-szoftver-szint problémáját servicekkel.
+
+00:31:00 authGuarg Vagyis bejelenkezés felügyelete ez is egy service
+https://angular.io/guide/router
+00:40 itt már védve a /user és /user/edit

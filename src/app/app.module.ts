@@ -17,6 +17,7 @@ import { UserService } from './shared/user.service';
 import { ErettsegiTipusComponent } from './erettsegi/erettsegi-tipus/erettsegi-tipus.component';
 import { ErettsegiTipusListCardComponent } from './erettsegi/erettsegi-tipus-list-card/erettsegi-tipus-list-card.component';
 import { ErettsegiTipusCardComponent } from './erettsegi/erettsegi-tipus-card/erettsegi-tipus-card.component';
+import { LoggedInGuard } from './shared/logged-in.guard';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ErettsegiTipusCardComponent } from './erettsegi/erettsegi-tipus-card/er
               ErettsegiTipusService,
               ErettsegiSzoftverService,
               ErettsegiSzintService,
-              UserService],
+              UserService,
+              LoggedInGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
