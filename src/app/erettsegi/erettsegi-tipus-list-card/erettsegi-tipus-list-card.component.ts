@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ErettsegiModel } from '../../shared/erettsegi/erettsegi-model';
+
 @Component({
   selector: 'app-erettsegi-tipus-list-card',
   templateUrl: './erettsegi-tipus-list-card.component.html',
@@ -7,6 +8,7 @@ import { ErettsegiModel } from '../../shared/erettsegi/erettsegi-model';
 })
 export class ErettsegiTipusListCardComponent implements OnInit {
   @Input() _post: ErettsegiModel;
+  
   constructor() { }
 
   ngOnInit() {

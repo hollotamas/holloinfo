@@ -1,3 +1,6 @@
+import { ErettsegiTipusModel } from './erettsegi-tipus-model';
+import { ErettsegiSzintModel } from './erettsegi-szint-model';
+
 export class ErettsegiModel {
   id: number;
   cim: string;
@@ -7,9 +10,11 @@ export class ErettsegiModel {
   video: string;
   megjegyzes: string;
   bejegyzesKeszult: string; //Date
-  erettsegIdopont: string; //Date
-  szint: number; //emelt, közép
-  tipus: number; //szövegszerkesztés, stb...
+  erettsegiIdopont: string; //Date
+  tipusId: number; //szövegszerkesztés, stb...
+  tipus?: ErettsegiTipusModel;
+  szintId: number; //emelt, közép
+  szint?: ErettsegiSzintModel;
 
   //param? létrejöhet paraméter nélküli példány
   constructor(param?: ErettsegiModel) {

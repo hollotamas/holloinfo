@@ -102,6 +102,7 @@ Formok, Servicek és építkezés I. rész
 11. Ezért a erettsegi-tipus-list-card.component.ts-ben kell egy @Input és a hozzá tartozó import.
 12. Ha fogadtuk az adatokat, akkor már a {{}} szerkezettben a megfelelő adathivatkozással megjelenik az adat.
 
+
 Itt tartok: 01:16:00 Itt publikálja a csávó azt amit leírtam és elkészített.
 01:20:00 környékén reduce vagyis egy tömb elemeinek átstruktúrálása. (erettsegi-tipus-list.componnt.ts)
 
@@ -123,3 +124,4 @@ Itt tartok:
 Itt tartok:
 00:08:00 Környékén Az alap model kiegészítése más modellekből számazó adatokkal
 Például: Jegy adatai az alap model, de az eladó adatait a getAll() meghívásakor hozzáteszi
+Nem haladtama videóval, viszont megoldottam az érettségi-tipus-szoftver-szint problémáját servicekkel.

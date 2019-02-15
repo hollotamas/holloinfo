@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
 import { ErettsegiModel } from './erettsegi-model';
+import { ErettsegiTipusModel } from './erettsegi-tipus-model';
+import { ErettsegiTipusService } from './erettsegi-tipus.service';
+import { ErettsegiSzintModel } from './erettsegi-szint-model';
+import { ErettsegiSzintService } from './erettsegi-szint.service';
+//import { ErettsegiSzoftverModel } from './erettsegi-szoftver-model';
+//import { ErettsegiSzoftverModelService } from './erettsegi-szoftver.service';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +13,8 @@ import { ErettsegiModel } from './erettsegi-model';
 export class ErettsegiService {
   private _erettsegi: ErettsegiModel[];
 
-  constructor() {
+  constructor(private _erettsegiTipusService: ErettsegiTipusService,
+              private _erettsegiSzintService: ErettsegiSzintService ) {
     this._erettsegi = [
       {
       'id': 1,
@@ -18,9 +25,9 @@ export class ErettsegiService {
       'video': '<iframe src="https://www.youtube.com/embed/videoseries?list=PLZrvEtlbdYapyw_5HknWRHfkQuDVfN6DY" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>',
       'megjegyzes': 'Valami ami szeretnék hozzáfűzni...',
       'bejegyzesKeszult': '2019. 02. 10', //Date
-      'erettsegIdopont': '2017. 10. 25', //Date
-      'szint': 1, //emelt, közép
-      'tipus': 1 //szövegszerkesztés, stb...
+      'erettsegiIdopont': '2017. 10. 25', //Date
+      'tipusId': 1,
+      'szintId': 1
       },
       {
       'id': 2,
@@ -31,9 +38,9 @@ export class ErettsegiService {
       'video': '<iframe src="https://www.youtube.com/embed/videoseries?list=PLZrvEtlbdYarDaQDbl3W9DReCbZmV916i" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>',
       'megjegyzes': 'Valami ami szeretnék hozzáfűzni...',
       'bejegyzesKeszult': '2019. 02. 09', //Date
-      'erettsegIdopont': '2018. 05. 17', //Date
-      'szint': 1, //emelt, közép
-      'tipus': 1 //szövegszerkesztés, stb...
+      'erettsegiIdopont': '2018. 05. 17', //Date
+      'tipusId': 1,
+      'szintId': 1
       },
       {
       'id': 3,
@@ -44,9 +51,9 @@ export class ErettsegiService {
       'video': '<iframe src="https://www.youtube.com/embed/videoseries?list=PLZrvEtlbdYarHW3Wh8F0XB0Ayuv0CGST2" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen" style="font-size: 1rem;"></iframe>',
       'megjegyzes': 'Valami ami szeretnék hozzáfűzni...',
       'bejegyzesKeszult': '2019. 02. 08', //Date
-      'erettsegIdopont': '2017. 05. 18', //Date
-      'szint': 1, //emelt, közép
-      'tipus': 1 //szövegszerkesztés, stb...
+      'erettsegiIdopont': '2017. 05. 18', //Date
+      'tipusId': 1,
+      'szintId': 1
       },
       {
       'id': 4,
@@ -57,9 +64,9 @@ export class ErettsegiService {
       'video': '<iframe src="https://www.youtube.com/embed/V_W98YLfwnU" width="853" height="480" frameborder="0" allowfullscreen="allowfullscreen"></iframe>',
       'megjegyzes': 'Valami ami szeretnék hozzáfűzni...',
       'bejegyzesKeszult': '2019. 02. 07', //Date
-      'erettsegIdopont': '2013. 05. 13', //Date
-      'szint': 2, //emelt, közép
-      'tipus': 1 //szövegszerkesztés, stb...
+      'erettsegiIdopont': '2013. 05. 13', //Date
+      'tipusId': 1,
+      'szintId': 2
       },
       {
       'id': 5,
@@ -70,9 +77,9 @@ export class ErettsegiService {
       'video': '<iframe src="https://www.youtube.com/embed/videoseries?list=PLZrvEtlbdYaqtG97NL9LSW5S_RJ4M1K56" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>',
       'megjegyzes': 'Valami ami szeretnék hozzáfűzni...',
       'bejegyzesKeszult': '2019. 02. 09', //Date
-      'erettsegIdopont': '2017. 10. 25', //Date
-      'szint': 1, //emelt, közép
-      'tipus': 2 //szövegszerkesztés, stb...
+      'erettsegiIdopont': '2017. 10. 25', //Date
+      'tipusId': 2,
+      'szintId': 1
       },
       {
       'id': 6,
@@ -83,9 +90,9 @@ export class ErettsegiService {
       'video': '<iframe src="https://www.youtube.com/embed/videoseries?list=PLZrvEtlbdYarY7akAXiUN1Wofk3uH-NZ-" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>',
       'megjegyzes': 'Valami ami szeretnék hozzáfűzni...',
       'bejegyzesKeszult': '2019. 02. 08', //Date
-      'erettsegIdopont': '2010. 05. 17', //Date
-      'szint': 1, //emelt, közép
-      'tipus': 2 //szövegszerkesztés, stb...
+      'erettsegiIdopont': '2010. 05. 17', //Date
+      'tipusId': 2,
+      'szintId': 1
       },
       {
       'id': 7,
@@ -96,9 +103,9 @@ export class ErettsegiService {
       'video': '<iframe src="https://www.youtube.com/embed/videoseries?list=PLZrvEtlbdYaqH3DCQGYhLVaJQRKpccRfj" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>',
       'megjegyzes': 'Valami ami szeretnék hozzáfűzni...',
       'bejegyzesKeszult': '2019. 02. 10', //Date
-      'erettsegIdopont': '2017. 05. 18', //Date
-      'szint': 1, //emelt 2, közép 1
-      'tipus': 3 //szövegszerkesztés, stb...
+      'erettsegiIdopont': '2017. 05. 18', //Date
+      'tipusId': 3,
+      'szintId': 1
       },
       {
       'id': 8,
@@ -109,9 +116,9 @@ export class ErettsegiService {
       'video': '<iframe src="https://www.youtube.com/embed/8-ghoHcDOuI" width="853" height="480" frameborder="0" allowfullscreen="allowfullscreen"></iframe>',
       'megjegyzes': 'Valami ami szeretnék hozzáfűzni...',
       'bejegyzesKeszult': '2019. 02. 09', //Date
-      'erettsegIdopont': '2014. 10. 17', //Date
-      'szint': 2, //emelt 2, közép 1
-      'tipus': 3 //szövegszerkesztés, stb...
+      'erettsegiIdopont': '2014. 10. 17', //Date
+      'tipusId': 3,
+      'szintId': 2
       },
       {
       'id': 9,
@@ -122,14 +129,20 @@ export class ErettsegiService {
       'video': '<iframe src="https://www.youtube.com/embed/86CQylKlAO8" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>',
       'megjegyzes': 'Valami ami szeretnék hozzáfűzni...',
       'bejegyzesKeszult': '2019. 02. 09', //Date
-      'erettsegIdopont': '2013. 05. 21', //Date
-      'szint': 1, //emelt 2, közép 1
-      'tipus': 3 //szövegszerkesztés, stb...
+      'erettsegiIdopont': '2013. 05. 21', //Date
+      'tipusId': 3,
+      'szintId': 1
       }
     ];
   }
 
-  getAllErettsegi(): ErettsegiModel[] {
-    return this._erettsegi;
+  getAllErettsegi() {
+    return this._erettsegi.map(erettsegi => {
+      return {
+        ...erettsegi,
+        tipus: this._erettsegiTipusService.getErettsegiTipusById(erettsegi.tipusId),
+        szint: this._erettsegiSzintService.getErettsegiSzintById(erettsegi.szintId)
+      }
+    });
   }
 }
