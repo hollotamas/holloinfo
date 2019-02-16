@@ -130,3 +130,7 @@ Nem haladtama videóval, viszont megoldottam az érettségi-tipus-szoftver-szint
 00:31:00 authGuarg Vagyis bejelenkezés felügyelete ez is egy service
 https://angular.io/guide/router
 00:40 itt már védve a /user és /user/edit
+
+Itt elakadtam, mert az embed video nem megy saját IQ-ból
+https://www.youtube.com/watch?v=2JeKfQ2r2r8 hasznosnak tűnik!
+Megoldás: https://angular.io/guide/security#xss ez a jó

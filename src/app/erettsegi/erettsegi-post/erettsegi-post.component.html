@@ -1,8 +1,21 @@
-<div>
-<p>
-  erettsegi-post works!
-</p>
-<div class="row">
-  <button type="button" name="button" [routerLink]="['../','edit']">Edit post</button>
-</div>
+<div class="card">
+  <div class="card-header sotetkek">
+    {{_teljesPost.cim}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title kozepBarna">Érettségi időpontja: {{_teljesPost.erettsegiIdopont}}</h5>
+    <p class="card-text sotetkek">{{_teljesPost.leiras}}</p>
+    <h5 class="card-title sotetkek">A feladat teljes leírása az oktatas.hu-ról</h5>
+    <p class="card-text sotetkek">{{_teljesPost.feladatUrl}}</p>
+    <h5 class="card-title sotetkek">A feladat forrásaállományai az oktatas.hu-ról</h5>
+    <p class="card-text sotetkek">{{_teljesPost.forrasUrl}}</p>
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" [src]="videoUrl" allowfullscreen></iframe>
+    </div>
+
+    <a class="btn sotetkekhatter" [routerLink]="['../','edit']">Szerkesztés</a>
+  </div>
+  <div class="card-footer text-muted">
+    {{_teljesPost.bejegyzesKeszult}}
+  </div>
 </div>

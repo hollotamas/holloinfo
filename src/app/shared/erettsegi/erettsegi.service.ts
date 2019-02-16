@@ -35,7 +35,7 @@ export class ErettsegiService {
       'leiras': 'Az autó és a gumiabroncs egymástól elválaszthatatlan technikai találmány. Ebben a feladatban a gumiabroncs történetét bemutató dokumentumot kell elkészítenie az alábbi leírás és minta alapján. Az elkészítéséhez használja fel a gumitortenet.txt, a vulkanizalas.txt és a fajtak.txt UTF-8 kódolású szövegállományt A dokumentumba beszúrandó képek: dunlop.jpg, goodyear.jpg, szerkezet.jpg.',
       'feladatUrl': 'https://www.oktatas.hu/bin/content/dload/erettsegi/feladatok_2018tavasz_kozep/k_inf_18maj_fl.pdf',
       'forrasUrl': 'https://www.oktatas.hu/bin/content/dload/erettsegi/feladatok_2018tavasz_kozep/k_inffor_18maj_fl.zip',
-      'video': '<iframe src="https://www.youtube.com/embed/videoseries?list=PLZrvEtlbdYarDaQDbl3W9DReCbZmV916i" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>',
+      'video': 'https://www.youtube.com/embed/videoseries?list=PLZrvEtlbdYarDaQDbl3W9DReCbZmV916i',
       'megjegyzes': 'Valami ami szeretnék hozzáfűzni...',
       'bejegyzesKeszult': '2019. 02. 09', //Date
       'erettsegiIdopont': '2018. 05. 17', //Date
@@ -144,5 +144,11 @@ export class ErettsegiService {
         szint: this._erettsegiSzintService.getErettsegiSzintById(erettsegi.szintId)
       }
     });
+  }
+
+  getErettsegiById(id: number) {
+    this._erettsegi = this.getAllErettsegi();
+    const e = this._erettsegi.filter(x => x.id == id);
+    return e.length > 0 ? e[0] : new ErettsegiModel(ErettsegiModel.emptyErettsegi);
   }
 }

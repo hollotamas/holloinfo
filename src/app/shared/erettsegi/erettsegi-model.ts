@@ -21,6 +21,21 @@ export class ErettsegiModel {
     if (param) {
       Object.assign(this, param);
     }
+  }
 
+  static get emptyErettsegi() {
+    return {
+      id: 0,
+      cim: '',
+      leiras: '',
+      feladatUrl: '',
+      forrasUrl: '',
+      video: '',
+      megjegyzes: '',
+      bejegyzesKeszult: '', //Date
+      erettsegiIdopont: '', //Date
+      tipusId: 0, //szövegszerkesztés, stb...
+      szintId: 0, //emelt, közép
+    }
   }
 }
