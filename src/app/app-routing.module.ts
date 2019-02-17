@@ -21,7 +21,7 @@ const routes: Routes = [
    children: [
      {path: '', component: ErettsegiTipusListComponent},
      {path: 'tanacsok', component: ErettsegiTanacsokComponent},
-     {path: 'new', component: ErettsegiDetailComponent},
+     {path: ':postID/new', component: ErettsegiDetailComponent},
      {path: ':postID/post', component: ErettsegiPostComponent},
      {path: ':postID/edit', component: ErettsegiDetailComponent}
    ]},
