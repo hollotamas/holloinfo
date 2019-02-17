@@ -2,7 +2,7 @@ import { ErettsegiTipusModel } from './erettsegi-tipus-model';
 import { ErettsegiSzintModel } from './erettsegi-szint-model';
 
 export class ErettsegiModel {
-  id: number;
+  id?: number;
   cim: string;
   leiras: string;
   feladatUrl: string;
@@ -25,7 +25,6 @@ export class ErettsegiModel {
 
   static get emptyErettsegi() {
     return {
-      id: 0,
       cim: '',
       leiras: '',
       feladatUrl: '',
