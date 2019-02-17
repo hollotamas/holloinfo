@@ -3,20 +3,12 @@
 <div class="row px-4">
     <button type="button" name="button" routerLink="/erettsegi/new">New post</button>
 </div>
-<div class="card-deck">
-  <div class="card-deck px-4" *ngFor="let erCsop of erettsegiCsoport3">
-    <app-erettsegi-tipus-list-card class="col col-md-6 col-lg-3 px-1 pb-2"
+  <div class="card-deck pr-3 pl-2 mb-1" *ngFor="let erCsop of erettsegiCsoport3">
+    <app-erettsegi-tipus-list-card class="col-sm-12 col-md-6 col-lg-3 mx-0 pr-0 pl-1"
                                    *ngFor="let er of erCsop"
                                    [_post] = "er"
     ></app-erettsegi-tipus-list-card>
   </div>
-    <!--     <app-erettsegi-tipus-list-card class="col-sm-6 col-md-4 col-lg-3 p-1">
-    </app-erettsegi-tipus-list-card>
-    <app-erettsegi-tipus-list-card class="col-sm-6 col-md-4 col-lg-3 p-1">
-    </app-erettsegi-tipus-list-card>
-    <app-erettsegi-tipus-list-card class="col-sm-6 col-md-4 col-lg-3 p-1">
-    </app-erettsegi-tipus-list-card> -->
-  </div>
-  <div class="row px-4">
-    <button type="button" name="button" routerLink="/erettsegi/new">New post</button>
-  </div>
+<div class="row px-4">
+  <button type="button" name="button" routerLink="/erettsegi/new">New post</button>
+</div>

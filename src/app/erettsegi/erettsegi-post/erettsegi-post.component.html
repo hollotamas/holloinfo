@@ -1,21 +1,34 @@
 <div class="card">
-  <div class="card-header sotetkek">
+  <div class="card-header vilagoskek sotetkekhatter">
     {{_teljesPost.cim}}
   </div>
   <div class="card-body">
     <h5 class="card-title kozepBarna">Érettségi időpontja: {{_teljesPost.erettsegiIdopont}}</h5>
-    <p class="card-text sotetkek">{{_teljesPost.leiras}}</p>
-    <h5 class="card-title sotetkek">A feladat teljes leírása az oktatas.hu-ról</h5>
-    <p class="card-text sotetkek">{{_teljesPost.feladatUrl}}</p>
-    <h5 class="card-title sotetkek">A feladat forrásaállományai az oktatas.hu-ról</h5>
-    <p class="card-text sotetkek">{{_teljesPost.forrasUrl}}</p>
-    <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" [src]="videoUrl" allowfullscreen></iframe>
+    <div class="row">
+      <div class="col-md-12 col-lg-8">
+        <p class="card-text sotetkek">{{_teljesPost.leiras}}</p>
+        <h5 class="card-title sotetkek">A feladat teljes leírása az oktatas.hu-ról</h5>
+        <p class="card-text sotetkek">
+          <a href="{{_teljesPost.feladatUrl}}" target="_blank">
+            {{_teljesPost.feladatUrl}}
+          </a>
+        </p>
+        <h5 class="card-title sotetkek">A feladat forrásaállományai az oktatas.hu-ról</h5>
+        <p class="card-text sotetkek">
+          <a href="{{_teljesPost.forrasUrl}}" target="_blank">
+            {{_teljesPost.forrasUrl}}
+          </a>
+        </p>
+      </div>
+      <div class="col-md-12 col-lg-4">
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" [src]="videoUrl" allowfullscreen></iframe>
+        </div>
+      </div>
     </div>
-
-    <a class="btn sotetkekhatter" [routerLink]="['../','edit']">Szerkesztés</a>
-  </div>
-  <div class="card-footer text-muted">
-    {{_teljesPost.bejegyzesKeszult}}
+    <a class="btn float-right vilagoskek sotetkekhatter" [routerLink]="['../','edit']">Szerkesztés</a>
+    </div>
+  <div class="card-footer text-muted sotetkekhatter vilagoskek text-right">
+    A bejegyzés készült: {{_teljesPost.bejegyzesKeszult}}
   </div>
 </div>
