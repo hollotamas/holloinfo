@@ -28,7 +28,7 @@ export class ErettsegiTipusListComponent implements OnInit {
         acc[acc.length-1].push(curr); //Mindig az utolsó tömb, utolsó elemébe kerül az új elem
         return acc;
       },[]); //[] tömb alakú a végeredmény
-    console.log(this.erettsegiCsoport3);
+    //console.log(this.erettsegiCsoport3);
     //this.erettsegiCsoport3.reduce(()=>{},[]);
 
   }

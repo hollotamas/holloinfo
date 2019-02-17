@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ErettsegiModel } from '../../shared/erettsegi/erettsegi-model';
 import { ErettsegiService } from '../../shared/erettsegi/erettsegi.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
@@ -13,15 +14,21 @@ export class ErettsegiPostComponent implements OnInit {
   public videoUrl;
 
   constructor(private _erettsegiService: ErettsegiService,
+              private _route: ActivatedRoute,
               private _sanitizer: DomSanitizer) {
-    this._teljesPost = _erettsegiService.getErettsegiById(2);
-    this.videoUrl =  this._sanitizer.bypassSecurityTrustResourceUrl(this._teljesPost.video);
-    //this.videoUrl = "https://www.youtube.com/embed/videoseries?list="+this._teljesPost.video;
+
     //console.log(this._teljesPost);
     //console.log(this.videoUrl);
   }
 
   ngOnInit() {
+    const postID = +this._route.snapshot.params['postID'];
+    if (postID) {
+      this._teljesPost = this._erettsegiService.getErettsegiById(postID);
+    } else {
+      this._teljesPost = new ErettsegiModel(ErettsegiModel.emptyErettsegi);
+    }
+    this.videoUrl =  this._sanitizer.bypassSecurityTrustResourceUrl(this._teljesPost.video);
   }
 
 }
