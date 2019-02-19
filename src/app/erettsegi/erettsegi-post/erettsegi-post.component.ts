@@ -30,5 +30,5 @@ export class ErettsegiPostComponent implements OnInit {
     }
     this.videoUrl =  this._sanitizer.bypassSecurityTrustResourceUrl(this._teljesPost.video);
   }
-
+  
 }

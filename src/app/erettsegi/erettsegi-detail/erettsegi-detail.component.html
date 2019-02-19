@@ -7,7 +7,74 @@
         Érettségi bejegyzés módosítása
       </h5>
     </ng-template>
-  </div>
-  <div class="row">
-    <button type="button" name="button" [routerLink]="['../../']">Mentés</button>
+    <div class="card-body">
+      <div class="card-text">
+        <form #erettsegiForm="ngForm" (ngSubmit)="onSubmit(erettsegiForm.value)">
+          <div class="form-group row">
+            <label for="feladatCim" class="col-sm-2 col-form-label">Feladat címe:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="feladatCim" placeholder=""
+                     [(ngModel)] = "_erettsegiPost.cim"
+                     name="cim">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="feladatLeiras" class="col-sm-2 col-form-label">Feladat leírása:</label>
+            <div class="col-sm-10">
+              <textarea name="leiras" rows="4"
+                        class="form-control" id="feladatLeiras"
+                        [(ngModel)]="_erettsegiPost.leiras">
+              </textarea>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="leirasURL" class="col-sm-2 col-form-label">Leírás URL:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="leirasURL" placeholder=""
+                     [(ngModel)]="_erettsegiPost.feladatUrl"
+                     name="feladatUrl">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="forrasURL" class="col-sm-2 col-form-label">Forrás URL:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="forrasURL" placeholder=""
+                     [(ngModel)]="_erettsegiPost.forrasUrl"
+                     name="forrasUrl">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="videoURL" class="col-sm-2 col-form-label">Videó URL:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="videoURL" placeholder=""
+                     [(ngModel)]="_erettsegiPost.video"
+                     name="videoUrl">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="erettsegiIdeje" class="col-sm-2 col-form-label">Érettségi ideje:</label>
+            <div class="col-sm-4">
+              <input type="date" class="form-control" id="erettsegiIdeje"
+                     name="erettsegiIdopont"
+                     [(ngModel)]="_erettsegiPost.erettsegiIdopont">
+              </div>
+              <label for="bejegyzesKeszult" class="col-sm-2 col-form-label text-right">Bejegyzés ideje:</label>
+              <div class="col-sm-4">
+                <input type="date" class="form-control" id="bejegyzesKeszult"
+                       name="bejegyzesKeszult"
+                       [(ngModel)]="_erettsegiPost.bejegyzesKeszult">
+                </div>
+          </div>
+          <div class="form-group row">
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <button type="submit" name="button" >Mentés</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
   </div>

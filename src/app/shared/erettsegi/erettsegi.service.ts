@@ -24,8 +24,8 @@ export class ErettsegiService {
       'forrasUrl': 'https://www.oktatas.hu/bin/content/dload/erettsegi/feladatok_2017osz_kozep/k_inffor_17okt_fl.zip',
       'video': 'https://www.youtube.com/embed/videoseries?list=PLZrvEtlbdYapyw_5HknWRHfkQuDVfN6DY',
       'megjegyzes': 'Valami ami szeretnék hozzáfűzni...',
-      'bejegyzesKeszult': '2019. 02. 10', //Date
-      'erettsegiIdopont': '2017. 10. 25', //Date
+      'bejegyzesKeszult': '2019-02-10', //Date
+      'erettsegiIdopont': '2017-05-17', //Date
       'tipusId': 1,
       'szintId': 1
       },
@@ -37,8 +37,8 @@ export class ErettsegiService {
       'forrasUrl': 'https://www.oktatas.hu/bin/content/dload/erettsegi/feladatok_2018tavasz_kozep/k_inffor_18maj_fl.zip',
       'video': 'https://www.youtube.com/embed/videoseries?list=PLZrvEtlbdYarDaQDbl3W9DReCbZmV916i',
       'megjegyzes': 'Valami ami szeretnék hozzáfűzni...',
-      'bejegyzesKeszult': '2019. 02. 09', //Date
-      'erettsegiIdopont': '2018. 05. 17', //Date
+      'bejegyzesKeszult': '2019-02-09', //Date
+      'erettsegiIdopont': '2018-05-17', //Date
       'tipusId': 1,
       'szintId': 1
       },
@@ -50,8 +50,8 @@ export class ErettsegiService {
       'forrasUrl': 'https://www.oktatas.hu/bin/content/dload/erettsegi/feladatok_2017tavasz_kozep/k_inffor_17maj_fl.zip',
       'video': 'https://www.youtube.com/embed/videoseries?list=PLZrvEtlbdYarHW3Wh8F0XB0Ayuv0CGST2',
       'megjegyzes': 'Valami ami szeretnék hozzáfűzni...',
-      'bejegyzesKeszult': '2019. 02. 08', //Date
-      'erettsegiIdopont': '2017. 05. 18', //Date
+      'bejegyzesKeszult': '2019-02-08', //Date
+      'erettsegiIdopont': '2017-05-18', //Date
       'tipusId': 1,
       'szintId': 1
       },
@@ -63,8 +63,8 @@ export class ErettsegiService {
       'forrasUrl': 'http://dari.oktatas.hu/kir/erettsegi/okev_doc/erettsegi_2013/e_infmafor_13maj_fl.zip',
       'video': 'https://www.youtube.com/embed/V_W98YLfwnU',
       'megjegyzes': 'Valami ami szeretnék hozzáfűzni...',
-      'bejegyzesKeszult': '2019. 02. 07', //Date
-      'erettsegiIdopont': '2013. 05. 13', //Date
+      'bejegyzesKeszult': '2019-02-07', //Date
+      'erettsegiIdopont': '2013-05-13', //Date
       'tipusId': 1,
       'szintId': 2
       },
@@ -76,8 +76,8 @@ export class ErettsegiService {
       'forrasUrl': 'https://www.oktatas.hu/bin/content/dload/erettsegi/feladatok_2017osz_kozep/k_inffor_17okt_fl.zip',
       'video': 'https://www.youtube.com/embed/videoseries?list=PLZrvEtlbdYaqtG97NL9LSW5S_RJ4M1K56',
       'megjegyzes': 'Valami ami szeretnék hozzáfűzni...',
-      'bejegyzesKeszult': '2019. 02. 09', //Date
-      'erettsegiIdopont': '2017. 10. 25', //Date
+      'bejegyzesKeszult': '2019-02-09', //Date
+      'erettsegiIdopont': '2017-10-25', //Date
       'tipusId': 2,
       'szintId': 1
       },
@@ -89,8 +89,8 @@ export class ErettsegiService {
       'forrasUrl': 'https://www.oktatas.hu/pub_bin/dload/kozoktatas/erettsegi/feladatok2010tavasz/k_infofor_10maj_fl.zip',
       'video': 'https://www.youtube.com/embed/videoseries?list=PLZrvEtlbdYarY7akAXiUN1Wofk3uH-NZ-',
       'megjegyzes': 'Valami ami szeretnék hozzáfűzni...',
-      'bejegyzesKeszult': '2019. 02. 08', //Date
-      'erettsegiIdopont': '2010. 05. 17', //Date
+      'bejegyzesKeszult': '2019-02-08', //Date
+      'erettsegiIdopont': '2010-05-17', //Date
       'tipusId': 2,
       'szintId': 1
       },
@@ -102,8 +102,8 @@ export class ErettsegiService {
       'forrasUrl': 'https://www.oktatas.hu/bin/content/dload/erettsegi/feladatok_2017tavasz_kozep/k_inffor_17maj_fl.zip',
       'video': 'https://www.youtube.com/embed/videoseries?list=PLZrvEtlbdYaqH3DCQGYhLVaJQRKpccRfj',
       'megjegyzes': 'Valami ami szeretnék hozzáfűzni...',
-      'bejegyzesKeszult': '2019. 02. 10', //Date
-      'erettsegiIdopont': '2017. 05. 18', //Date
+      'bejegyzesKeszult': '2019-02-10', //Date
+      'erettsegiIdopont': '2017-05-18', //Date
       'tipusId': 3,
       'szintId': 1
       },
@@ -115,8 +115,8 @@ export class ErettsegiService {
       'forrasUrl': 'https://www.oktatas.hu/kozneveles/erettsegi/feladatsorok_vizsgatargyankent/!DARI_ErettsegiFeladatsorok/oh.php?id=letoltes&tema=erettsegi&f=erettsegi_2014/oktober/e_inffor_14okt_fl.zip',
       'video': 'https://www.youtube.com/embed/8-ghoHcDOuI',
       'megjegyzes': 'Valami ami szeretnék hozzáfűzni...',
-      'bejegyzesKeszult': '2019. 02. 09', //Date
-      'erettsegiIdopont': '2014. 10. 17', //Date
+      'bejegyzesKeszult': '2019-02-09', //Date
+      'erettsegiIdopont': '2014-10-17', //Date
       'tipusId': 3,
       'szintId': 2
       },
@@ -128,8 +128,8 @@ export class ErettsegiService {
       'forrasUrl': 'https://www.oktatas.hu/kozneveles/erettsegi/feladatsorok_vizsgatargyankent/!DARI_ErettsegiFeladatsorok/oh.php?id=letoltes&tema=erettsegi&f=erettsegi_2013/k_inffor_13maj_fl.zip',
       'video': 'https://www.youtube.com/embed/86CQylKlAO8',
       'megjegyzes': 'Valami ami szeretnék hozzáfűzni...',
-      'bejegyzesKeszult': '2019. 02. 09', //Date
-      'erettsegiIdopont': '2013. 05. 21', //Date
+      'bejegyzesKeszult': '2019-02-09', //Date
+      'erettsegiIdopont': '2013-05-21', //Date
       'tipusId': 3,
       'szintId': 1
       }
@@ -150,5 +150,21 @@ export class ErettsegiService {
     this._erettsegi = this.getAllErettsegi();
     const e = this._erettsegi.filter(x => x.id == id);
     return e.length > 0 ? e[0] : new ErettsegiModel(ErettsegiModel.emptyErettsegi);
+  }
+
+  update(erettsegiPost: ErettsegiModel) {
+
+  }
+
+  create(param: ErettsegiModel) {
+    //console.log(param);
+    this._erettsegi = [
+      ...this._erettsegi,
+      {
+      id: this._erettsegi.reduce((x,y) => x.id > y.id?x:y).id+1,
+      ...param
+      }
+    ];
+
   }
 }

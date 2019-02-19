@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AlertModule } from 'ngx-bootstrap/alert';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { FormsModule }   from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,10 +35,12 @@ import { LoggedInGuard } from './shared/logged-in.guard';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     CollapseModule.forRoot(),
     BsDropdownModule.forRoot(),
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    BsDatepickerModule.forRoot()
   ],
   providers: [ErettsegiService,
               ErettsegiTipusService,
