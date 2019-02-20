@@ -49,7 +49,7 @@ export class ErettsegiService {
       ...this._erettsegi,
       {
       ...param,
-      id: this.getMaxId+1,
+      id: this.getMaxId()+1,
       }
     ];
     //console.log('erettsegi',this._erettsegi);
