@@ -21,6 +21,7 @@ import { ErettsegiTipusComponent } from './erettsegi/erettsegi-tipus/erettsegi-t
 import { ErettsegiTipusListCardComponent } from './erettsegi/erettsegi-tipus-list-card/erettsegi-tipus-list-card.component';
 import { ErettsegiTipusCardComponent } from './erettsegi/erettsegi-tipus-card/erettsegi-tipus-card.component';
 import { LoggedInGuard } from './shared/logged-in.guard';
+import { AlertComponent } from './core/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { LoggedInGuard } from './shared/logged-in.guard';
     ErettsegiTipusComponent,
     ErettsegiTipusListCardComponent,
     PageNotFoundComponent,
-    ErettsegiTipusCardComponent
+    ErettsegiTipusCardComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
