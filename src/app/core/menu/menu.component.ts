@@ -13,7 +13,7 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
   }
 
-  logout() {
-    this._userService.logout();
-  }
+  // logout() {
+  //   this._userService.logout();
+  // }
 }

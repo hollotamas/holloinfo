@@ -1,54 +1,34 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserModel } from './user-model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  public isLoggedIn = false;
-  private _user: UserModel;
-  private _allUser: UserModel[];
 
-  constructor(private _router: Router) {
-    this._allUser = this.getMockUser();
+  constructor( private http: HttpClient ) {
+
+  }
+  getAll() {
+      return this.http.get<User[]>('/api/users');
   }
 
-  login(email: string, password: string): boolean {
-    if (email === "Angular" && password === "Angular") {
-      this._user = new UserModel(UserModel.peldaUser);
-      this.isLoggedIn = true;
-      this._router.navigate(['/user']);
-      return true;
-    } else {
-      return false;
-    }
+  getById(id: number) {
+      return this.http.get('/api/users/' + id);
   }
 
-  logout():void {
-    delete(this._user);
-    this.isLoggedIn = false;
-    this._router.navigate(['/tartalom'])
+  create(user: User) {
+      return this.http.post('/api/users', user);
   }
 
-  regisztracio(param?: UserModel): boolean {
-    if (param) {
-      this._user = new UserModel(param);
-    } else {
-      this._user = new UserModel(UserModel.peldaUser);
-    }
-    this.isLoggedIn = true;
-    this._router.navigate(['/user']);
-    return true;
+  update(user: User) {
+      return this.http.put('/api/users/' + user.id, user);
   }
 
-  getUserById(id: number) {
-    const user = this._allUser.filter(x => x.id == id);
-    return user.length > 0 ? user[0] : new UserModel(UserModel.emptyUser);
-  }
-
-  getCurrentUser() {
-    return this._user;
+  delete(id: number) {
+      return this.http.delete('/api/users/' + id);
   }
 
   private getMockUser() {

@@ -5,7 +5,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { FormsModule }   from '@angular/forms';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './shared/jwt.interceptor';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,9 @@ import { ErettsegiTipusListCardComponent } from './erettsegi/erettsegi-tipus-lis
 import { ErettsegiTipusCardComponent } from './erettsegi/erettsegi-tipus-card/erettsegi-tipus-card.component';
 import { LoggedInGuard } from './shared/logged-in.guard';
 import { AlertComponent } from './core/alert/alert.component';
+import { AlertService } from './shared/alert.service';
+import { AuthenticationService } from './shared/authentication.service';
+import { fakeBackendProvider } from './shared/fake-backend';
 
 @NgModule({
   declarations: [
@@ -49,7 +53,16 @@ import { AlertComponent } from './core/alert/alert.component';
               ErettsegiSzoftverService,
               ErettsegiSzintService,
               UserService,
-              LoggedInGuard],
+              {
+                provide: HTTP_INTERCEPTORS,
+                useClass: JwtInterceptor,
+                multi: true
+              },
+
+              AlertService,
+              AuthenticationService,
+              LoggedInGuard,
+              fakeBackendProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

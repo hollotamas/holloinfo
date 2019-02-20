@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService} from '../../shared/user.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { AlertService } from '../../shared/alert.service';
+import { AuthenticationService } from '../../shared/authentication.service';
 
 @Component({
   selector: 'app-user-login',
@@ -7,20 +9,33 @@ import { UserService} from '../../shared/user.service';
   styleUrls: ['./user-login.component.css']
 })
 export class UserLoginComponent implements OnInit {
-  public error: string;
+  model: any = {};
+  loading = false;
+  returnUrl: string;
 
-  constructor(private _userService: UserService) { }
+  constructor( private route: ActivatedRoute,
+               private router: Router,
+               private authenticationService: AuthenticationService,
+               private alertService: AlertService ) { }
 
   ngOnInit() {
+    // reset login status
+    this.authenticationService.logout();
+
+    // get return url from route parameters or default to '/'
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
-  login(email: string, password: string) {
-    if (!this._userService.login(email, password)) {
-      this.error = "Bejelentkezési hiba!!!";
-    }
-  }
-
-  clearError(): void {
-    delete(this.error);
+  login() {
+      this.loading = true;
+      this.authenticationService.login(this.model.email, this.model.password)
+          .subscribe(
+              data => {
+                  this.router.navigate([this.returnUrl]);
+              },
+              error => {
+                  this.alertService.error(error);
+                  this.loading = false;
+              });
   }
 }

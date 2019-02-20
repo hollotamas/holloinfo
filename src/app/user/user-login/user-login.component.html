@@ -1,40 +1,43 @@
 <div class="container border px-4">
 
-   <alert type="danger" dismissible="true"
-          *ngIf="error"
-          (onClose)="clearError()"
-   >{{error}}</alert>
    <div class="card mx-auto">
      <div class="card-header bg-primary text-light text-center">
        Bejelentkezés
      </div>
-     <div class="card-body">
-         <div class="form-group">
-           <label for="inputEmail">Bejelentkezési azonosító: (e-mail):</label>
-           <input type="email" class="form-control"
-                  id="inputEmail" aria-describedby="emailHelp"
-                  placeholder="Kérem az email címet"
-                  value="example@example.com"
-                  #email
-           >
-           <small id="emailHelp" class="form-text text-muted">Nem használom fel spam küldésére és nem osztom meg harmadik félel!</small>
-         </div>
-         <div class="form-group">
-           <label for="inputPassword">Jelszó:</label>
-           <input type="password" class="form-control"
-                  id="inputPassword" placeholder="Jelszó"
-                  value="Angular"
-                  #password
-           >
-         </div>
-         <div class="form-group row">
-           <div class="col text-center">
-             <button type="button" class="btn btn-primary" (click)="login(email.value, password.value)">Belépés</button>
+     <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+       <div class="card-body">
+           <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
+             <label for="inputEmail">Bejelentkezési azonosító: (e-mail):</label>
+             <input type="email" class="form-control"
+                    id="inputEmail" aria-describedby="emailHelp"
+                    placeholder="Kérem az email címet"
+                    value="example@example.com"
+                    [(ngModel)]="model.email" #email="ngModel"
+                    required
+             >
+             <small id="emailHelp" class="form-text text-muted">Nem használom fel spam küldésére és nem osztom meg harmadik félel!</small>
+             <div *ngIf="f.submitted && !email.valid" class="help-block">Az e-mail megadása kötelező!</div>
            </div>
-           <div class="col text-center">
-             <button type="button" class="btn btn-primary" routerLink="/registration">Regisztráció</button>
+           <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+             <label for="inputPassword">Jelszó:</label>
+             <input type="password" class="form-control"
+                    id="inputPassword" placeholder=""
+                    value="Angular"
+                    name="password" [(ngModel)]="model.password" #password="ngModel"
+                    required
+             >
+             <div *ngIf="f.submitted && !password.valid" class="help-block">Jelszó megadása kötelező!</div>
            </div>
-         </div>
-     </div>
+           <div class="form-group row">
+             <div class="col text-center">
+               <button type="button" class="btn btn-primary" [disabled]="loading">Belépés</button>
+               <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+             </div>
+             <div class="col text-center">
+               <button type="button" class="btn btn-primary" routerLink="/registration">Regisztráció</button>
+             </div>
+           </div>
+       </div>
+     </form>
    </div>
 </div>
