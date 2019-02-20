@@ -15,7 +15,53 @@ export class ErettsegiService {
 
   constructor(private _erettsegiTipusService: ErettsegiTipusService,
               private _erettsegiSzintService: ErettsegiSzintService ) {
+    this._erettsegi = this.getMockData();
+  }
+
+  getAllErettsegi() {
+    return this._erettsegi.map(erettsegi => {
+      return {
+        ...erettsegi,
+        tipus: this._erettsegiTipusService.getErettsegiTipusById(erettsegi.tipusId),
+        szint: this._erettsegiSzintService.getErettsegiSzintById(erettsegi.szintId)
+      }
+    });
+  }
+
+  getErettsegiById(id: number) {
+    this._erettsegi = this.getAllErettsegi();
+    const e = this._erettsegi.filter(x => x.id == id);
+    return e.length > 0 ? e[0] : new ErettsegiModel(ErettsegiModel.emptyErettsegi);
+  }
+
+  update(param: ErettsegiModel) {
+    //e-nélkül is megváltozik a kötés [()] miatt a tartalma.
+    //de a tananyagban nagyon erőltették.
+    this._erettsegi = this._erettsegi
+      .map( er => er.id == param.id ? {...param} : er );
+
+    console.log('ErettsegiModel', this.getAllErettsegi());
+  }
+
+  create(param: ErettsegiModel) {
+    //console.log('param:',param);
     this._erettsegi = [
+      ...this._erettsegi,
+      {
+      ...param,
+      id: this.getMaxId+1,
+      }
+    ];
+    //console.log('erettsegi',this._erettsegi);
+
+  }
+
+  private getMaxId() {
+    return this._erettsegi.reduce((x,y) => x.id > y.id?x:y).id;
+  }
+
+  private getMockData() {
+    return [
       {
       'id': 1,
       'cim': 'Atlétika',
@@ -134,47 +180,5 @@ export class ErettsegiService {
       'szintId': 1
       }
     ];
-  }
-
-  getAllErettsegi() {
-    return this._erettsegi.map(erettsegi => {
-      return {
-        ...erettsegi,
-        tipus: this._erettsegiTipusService.getErettsegiTipusById(erettsegi.tipusId),
-        szint: this._erettsegiSzintService.getErettsegiSzintById(erettsegi.szintId)
-      }
-    });
-  }
-
-  getErettsegiById(id: number) {
-    this._erettsegi = this.getAllErettsegi();
-    const e = this._erettsegi.filter(x => x.id == id);
-    return e.length > 0 ? e[0] : new ErettsegiModel(ErettsegiModel.emptyErettsegi);
-  }
-
-  update(param: ErettsegiModel) {
-    //e-nélkül is megváltozik a kötés [()] miatt a tartalma.
-    //de a tananyagban nagyon erőltették.
-    this._erettsegi = this._erettsegi
-      .map( er => er.id == param.id ? {...param} : er );
-
-    console.log('ErettsegiModel', this.getAllErettsegi());
-  }
-
-  create(param: ErettsegiModel) {
-    //console.log('param:',param);
-    this._erettsegi = [
-      ...this._erettsegi,
-      {
-      ...param,
-      id: this.getMaxId+1,
-      }
-    ];
-    //console.log('erettsegi',this._erettsegi);
-
-  }
-
-  private getMaxId() {
-    return this._erettsegi.reduce((x,y) => x.id > y.id?x:y).id;
   }
 }
