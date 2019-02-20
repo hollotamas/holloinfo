@@ -28,12 +28,12 @@ import { AlertComponent } from './core/alert/alert.component';
     AppComponent,
     FejlecComponent,
     MenuComponent,
+    AlertComponent,
     ...AppRoutingModule.routTableComponent,
     ErettsegiTipusComponent,
     ErettsegiTipusListCardComponent,
     PageNotFoundComponent,
-    ErettsegiTipusCardComponent,
-    AlertComponent
+    ErettsegiTipusCardComponent
   ],
   imports: [
     BrowserModule,

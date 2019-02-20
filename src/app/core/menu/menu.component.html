@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-md navbar-dark kozepBarnahatter">
+<nav class="navbar navbar-expand-md navbar-dark bg-info">
   <a class="navbar-brand" routerLink="/tartalom">
-    <i class="fas fa-home fa-lg sotetkek"></i>
+    <i class="fas fa-home fa-lg text-primary"></i>
   </a>
   <button class="navbar-toggler" type="button"
           (click)="isCollapsed = !isCollapsed"
@@ -72,7 +72,7 @@
       <ng-template #loggedBlock>
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" (click)="logout()">
-          <!-- <i class="fas fa-sign-out-alt sotetkek fa-lg"></i> -->
+          <!-- <i class="fas fa-sign-out-alt text-primary fa-lg"></i> -->
           Kilépés
         </a>
       </li>
