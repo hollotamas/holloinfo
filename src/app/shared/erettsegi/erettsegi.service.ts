@@ -167,10 +167,14 @@ export class ErettsegiService {
       ...this._erettsegi,
       {
       ...param,
-      id: this._erettsegi.reduce((x,y) => x.id > y.id?x:y).id+1,
+      id: this.getMaxId+1,
       }
     ];
     //console.log('erettsegi',this._erettsegi);
 
+  }
+
+  private getMaxId() {
+    return this._erettsegi.reduce((x,y) => x.id > y.id?x:y).id;
   }
 }
