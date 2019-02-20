@@ -17,8 +17,8 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export class ErettsegiDetailComponent implements OnInit {
   public _erettsegiPost: ErettsegiModel;
   public _bsValue = new Date();
-  public _erettsegiSzint: ErettsegiSzintModel;
-  public _erettsegiTipus: ErettsegiTipusModel;
+  public _erettsegiSzint: ErettsegiSzintModel[];
+  public _erettsegiTipus: ErettsegiTipusModel[];
 
   constructor(private _route: ActivatedRoute,
               private _router: Router,
@@ -56,7 +56,13 @@ export class ErettsegiDetailComponent implements OnInit {
     }
 
     console.log('Form adat',erettsegiForm);
-    this._router.navigate(['./erettsegi']);
+    //ez nem működik
+    if (erettsegiForm.id) {
+      this._router.navigate(['../',erettsegiForm.id,'post']);
+    } else {
+      this._router.navigate(['./erettsegi']);
+    }
+
   }
 
   formatDateSpicker(str) {

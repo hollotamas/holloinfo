@@ -152,8 +152,13 @@ export class ErettsegiService {
     return e.length > 0 ? e[0] : new ErettsegiModel(ErettsegiModel.emptyErettsegi);
   }
 
-  update(erettsegiPost: ErettsegiModel) {
+  update(param: ErettsegiModel) {
+    //e-nélkül is megváltozik a kötés [()] miatt a tartalma.
+    //de a tananyagban nagyon erőltették.
+    this._erettsegi = this._erettsegi
+      .map( er => er.id == param.id ? {...param} : er );
 
+    console.log('ErettsegiModel', this.getAllErettsegi());
   }
 
   create(param: ErettsegiModel) {
