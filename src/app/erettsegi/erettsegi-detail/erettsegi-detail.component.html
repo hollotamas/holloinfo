@@ -15,7 +15,8 @@
             <div class="col-sm-10">
               <input type="text" class="form-control" id="feladatCim" placeholder=""
                      [(ngModel)] = "_erettsegiPost.cim"
-                     name="cim">
+                     name="cim"
+                     required>
             </div>
           </div>
           <div class="form-group row">
@@ -23,7 +24,8 @@
             <div class="col-sm-10">
               <textarea name="leiras" rows="4"
                         class="form-control" id="feladatLeiras"
-                        [(ngModel)]="_erettsegiPost.leiras">
+                        [(ngModel)]="_erettsegiPost.leiras"
+                        required>
               </textarea>
             </div>
           </div>
@@ -33,7 +35,8 @@
             <div class="col-sm-10">
               <input type="text" class="form-control" id="leirasURL" placeholder=""
                      [(ngModel)]="_erettsegiPost.feladatUrl"
-                     name="feladatUrl">
+                     name="feladatUrl"
+                     required>
             </div>
           </div>
           <div class="form-group row">
@@ -41,7 +44,8 @@
             <div class="col-sm-10">
               <input type="text" class="form-control" id="forrasURL" placeholder=""
                      [(ngModel)]="_erettsegiPost.forrasUrl"
-                     name="forrasUrl">
+                     name="forrasUrl"
+                     required>
             </div>
           </div>
           <div class="form-group row">
@@ -49,7 +53,8 @@
             <div class="col-sm-10">
               <input type="text" class="form-control" id="videoURL" placeholder=""
                      [(ngModel)]="_erettsegiPost.video"
-                     name="video">
+                     name="video"
+                     required>
             </div>
           </div>
           <div class="form-group row">
@@ -57,13 +62,15 @@
             <div class="col-sm-4">
               <input type="date" class="form-control" id="erettsegiIdeje"
                      name="erettsegiIdopont"
-                     [(ngModel)]="_erettsegiPost.erettsegiIdopont">
+                     [(ngModel)]="_erettsegiPost.erettsegiIdopont"
+                     required>
               </div>
               <label for="bejegyzesKeszult" class="col-sm-2 col-form-label text-right">Bejegyzés ideje:</label>
               <div class="col-sm-4">
                 <input type="date" class="form-control" id="bejegyzesKeszult"
                        name="bejegyzesKeszult"
-                       [(ngModel)]="_erettsegiPost.bejegyzesKeszult">
+                       [(ngModel)]="_erettsegiPost.bejegyzesKeszult"
+                       required>
                 </div>
           </div>
           <div class="form-group row">
@@ -71,7 +78,8 @@
             <div class="col-sm-10">
               <select class="form-control" id="szint"
                       [(ngModel)]="_erettsegiPost.szintId"
-                      name="szintId">
+                      name="szintId"
+                      required>
                 <option *ngFor="let szint of _erettsegiSzint" [value]="szint.id">{{szint.szintNev}}</option>
               </select>
             </div>
@@ -81,7 +89,8 @@
             <div class="col-sm-10">
               <select class="form-control" id="tipus"
                       [(ngModel)]="_erettsegiPost.tipusId"
-                      name="tipusId">
+                      name="tipusId"
+                      required>
                 <option *ngFor="let tipus of _erettsegiTipus" [value]="tipus.id">{{tipus.tipusNev}} - {{tipus.szoftver.szoftverNev}}</option>
               </select>
             </div>
@@ -96,8 +105,11 @@
             </div>
           </div>
           <div class="form-group row">
-            <div class="col-sm-10">
-              <button type="submit" name="button" >Mentés</button>
+            <div class="col-sm-12 text-right">
+              <button type="submit" class="btn sotetkekhatter vilagoskek"
+                      [disabled]="erettsegiForm.invalid">
+                Új bejegyzés mentése
+              </button>
             </div>
           </div>
         </form>
