@@ -157,14 +157,15 @@ export class ErettsegiService {
   }
 
   create(param: ErettsegiModel) {
-    //console.log(param);
+    //console.log('param:',param);
     this._erettsegi = [
       ...this._erettsegi,
       {
+      ...param,
       id: this._erettsegi.reduce((x,y) => x.id > y.id?x:y).id+1,
-      ...param
       }
     ];
+    //console.log('erettsegi',this._erettsegi);
 
   }
 }

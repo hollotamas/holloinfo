@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ErettsegiService } from '../../shared/erettsegi/erettsegi.service';
 import { ErettsegiModel } from '../../shared/erettsegi/erettsegi-model';
+import { UserService } from '../../shared/user.service';
 
 
 @Component({
@@ -11,7 +12,8 @@ import { ErettsegiModel } from '../../shared/erettsegi/erettsegi-model';
 export class ErettsegiTipusListComponent implements OnInit {
   public erettsegiCsoport3: ErettsegiModel[];
 
-  constructor( private _erettsegiService: ErettsegiService ) {
+  constructor( private _erettsegiService: ErettsegiService,
+               public _userService: UserService) {
   }
 
   ngOnInit() {

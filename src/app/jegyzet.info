@@ -138,3 +138,4 @@ Megoldás: https://angular.io/guide/security#xss ez a jó
 Itt tartok:
 01.04:00 Megoldva az új érettségi bejegyzés és módosítás, tudok route segítségével postID-t olvasni az url-ből.
 Hiányzik a form, amelybe beesnek a módosítandó adatok, vagy az új bejegyzés, ez most jön.
+01:10:00-01:37:00 Form adat küldés kapás működése update és create elhelyezése.
