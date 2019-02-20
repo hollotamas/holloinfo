@@ -7,6 +7,7 @@ import { ErettsegiSzintService } from '../../shared/erettsegi/erettsegi-szint.se
 import { ErettsegiTipusModel } from '../../shared/erettsegi/erettsegi-tipus-model';
 import { ErettsegiTipusService } from '../../shared/erettsegi/erettsegi-tipus.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-erettsegi-detail',
@@ -25,7 +26,8 @@ export class ErettsegiDetailComponent implements OnInit {
               private _erettsegiService: ErettsegiService,
               private _erettsegiSzintService: ErettsegiSzintService,
               private _erettsegiTipusService: ErettsegiTipusService,
-              private _sanitizer: DomSanitizer) {
+              private _sanitizer: DomSanitizer,
+              private _location: Location) {
   }
 
   ngOnInit() {
@@ -57,11 +59,8 @@ export class ErettsegiDetailComponent implements OnInit {
 
     console.log('Form adat',erettsegiForm);
     //ez nem működik
-    if (erettsegiForm.id) {
-      this._router.navigate(['../',erettsegiForm.id,'post']);
-    } else {
-      this._router.navigate(['./erettsegi']);
-    }
+      this._location.back();
+
 
   }
 
