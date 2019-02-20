@@ -8,7 +8,20 @@ export class ErettsegiSzoftverService {
   private _erettsegiSzoftver: ErettsegiSzoftverModel[];
 
   constructor() {
-    this._erettsegiSzoftver = [
+    this._erettsegiSzoftver = this.getMockSzoftver();
+  }
+
+  getAllErettsegiSzoftver() {
+    return this._erettsegiSzoftver;
+  }
+
+  getErettsegiSzoftverById(id: number): ErettsegiSzoftverModel {
+    const erSzoft = this._erettsegiSzoftver.filter(x => x.id == id);
+    return erSzoft.length > 0 ? erSzoft[0] : new ErettsegiSzoftverModel(ErettsegiSzoftverModel.emptySzoftver);
+  }
+
+  private getMockSzoftver() {
+    return [
       {
         id: 1,
         szoftverNev: 'Office Word 2016',
@@ -40,14 +53,5 @@ export class ErettsegiSzoftverService {
         logoUtvonal: './assets/images/erettsegi/python.png'
       }
     ];
-  }
-
-  getAllErettsegiSzoftver() {
-    return this._erettsegiSzoftver;
-  }
-
-  getErettsegiSzoftverById(id: number): ErettsegiSzoftverModel {
-    const erSzoft = this._erettsegiSzoftver.filter(x => x.id == id);
-    return erSzoft.length > 0 ? erSzoft[0] : new ErettsegiSzoftverModel(ErettsegiSzoftverModel.emptySzoftver);
   }
 }

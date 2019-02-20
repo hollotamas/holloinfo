@@ -8,7 +8,20 @@ export class ErettsegiSzintService {
   private _erettsegiSzint: ErettsegiSzintModel[];
 
   constructor() {
-    this._erettsegiSzint = [
+    this._erettsegiSzint = this.getMockSzint();
+  }
+
+  getAllErettsegiSzint() {
+    return this._erettsegiSzint;
+  }
+
+  getErettsegiSzintById(id: number): ErettsegiSzintModel {
+    const eSzint = this._erettsegiSzint.filter(x => x.id == id);
+    return eSzint.length > 0 ? eSzint[0] : new ErettsegiSzintModel(ErettsegiSzintModel.emptySzint);
+  }
+
+  private getMockSzint() {
+    return [
       {
         id: 1,
         szintNev: 'középszint',
@@ -20,14 +33,5 @@ export class ErettsegiSzintService {
         szintKep: './assets/images/erettsegi/ebetu.png'
       },
     ];
-  }
-
-  getAllErettsegiSzint() {
-    return this._erettsegiSzint;
-  }
-
-  getErettsegiSzintById(id: number): ErettsegiSzintModel {
-    const eSzint = this._erettsegiSzint.filter(x => x.id == id);
-    return eSzint.length > 0 ? eSzint[0] : new ErettsegiSzintModel(ErettsegiSzintModel.emptySzint);
   }
 }

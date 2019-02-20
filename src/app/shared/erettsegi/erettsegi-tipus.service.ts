@@ -11,7 +11,28 @@ export class ErettsegiTipusService {
   //private _erettsegiSzoftverService: ErettsegiSzoftverService = new ErettsegiSzoftverService();
 
   constructor( private _erettsegiSzoftverService: ErettsegiSzoftverService ) {
-    this._erettsegiTipus = [
+    this._erettsegiTipus = this.getMockTipus();
+    //this.getAllErettsegiTipus();
+  }
+//
+  getAllErettsegiTipus() {
+    return this._erettsegiTipus.map(
+      tipus => {
+        return {
+            ...tipus,
+            szoftver: this._erettsegiSzoftverService.getErettsegiSzoftverById(tipus.szoftverId)
+        };
+      });
+  }
+
+  getErettsegiTipusById(id: number):ErettsegiTipusModel {
+    this._erettsegiTipus = this.getAllErettsegiTipus();
+    const eTip = this._erettsegiTipus.filter(x => x.id == id);
+    return eTip.length > 0 ? eTip[0] : new ErettsegiTipusModel(ErettsegiTipusModel.emptyTipus);
+  }
+
+  private getMockTipus() {
+    return [
         {
           id: 1,
           tipusNev: 'Szövegszerkesztés',
@@ -43,22 +64,5 @@ export class ErettsegiTipusService {
           szoftverId: 6
         }
     ];
-    //this.getAllErettsegiTipus();
-  }
-//
-  getAllErettsegiTipus() {
-    return this._erettsegiTipus.map(
-      tipus => {
-        return {
-            ...tipus,
-            szoftver: this._erettsegiSzoftverService.getErettsegiSzoftverById(tipus.szoftverId)
-        };
-      });
-  }
-
-  getErettsegiTipusById(id: number):ErettsegiTipusModel {
-    this._erettsegiTipus = this.getAllErettsegiTipus();
-    const eTip = this._erettsegiTipus.filter(x => x.id == id);
-    return eTip.length > 0 ? eTip[0] : new ErettsegiTipusModel(ErettsegiTipusModel.emptyTipus);
   }
 }

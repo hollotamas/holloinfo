@@ -11,29 +11,7 @@ export class UserService {
   private _allUser: UserModel[];
 
   constructor(private _router: Router) {
-    this._allUser = [
-      {
-        id: 1,
-        name: 'Vacskamati',
-        email: 'vacskamati@example.com',
-        cim: '1000 Kerekerdő, Fa sor 3.',
-        jogosultsag: 0
-      },
-      {
-        id: 2,
-        name: 'Ló Szerafin',
-        email: 'szerafin@example.com',
-        cim: '1000 Kerekerdő, Fa sor 3.',
-        jogosultsag: 1
-      },
-      {
-        id: 3,
-        name: 'Aromo',
-        email: 'aromo@example.com',
-        cim: '1000 Kerekerdő, Fa sor 3.',
-        jogosultsag: 1
-      },
-    ];
+    this._allUser = this.getMockUser();
   }
 
   login(email: string, password: string): boolean {
@@ -71,5 +49,31 @@ export class UserService {
 
   getCurrentUser() {
     return this._user;
+  }
+
+  private getMockUser() {
+    return [
+      {
+        id: 1,
+        name: 'Vacskamati',
+        email: 'vacskamati@example.com',
+        cim: '1000 Kerekerdő, Fa sor 3.',
+        jogosultsag: 0
+      },
+      {
+        id: 2,
+        name: 'Ló Szerafin',
+        email: 'szerafin@example.com',
+        cim: '1000 Kerekerdő, Fa sor 3.',
+        jogosultsag: 1
+      },
+      {
+        id: 3,
+        name: 'Aromo',
+        email: 'aromo@example.com',
+        cim: '1000 Kerekerdő, Fa sor 3.',
+        jogosultsag: 1
+      },
+    ];
   }
 }
