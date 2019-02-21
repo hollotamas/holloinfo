@@ -11,4 +11,13 @@
       <a routerLink="/user/edit" class="card-link">Profil szerkesztése</a>
     </div>
   </div>
+
+  <h3>All registered users:</h3>
+    <ul>
+        <li *ngFor="let user of users">
+            {{user.username}} ({{user.firstName}} {{user.lastName}})
+            - <a (click)="deleteUser(user.id)">Delete</a>
+        </li>
+    </ul>
+    <p><a [routerLink]="['user/login']">Logout</a></p>
 </div>

@@ -8,12 +8,22 @@ import { UserService } from '../../shared/user.service';
   styleUrls: ['./user-profil.component.css']
 })
 export class UserProfilComponent implements OnInit {
-  private user: UserModel;
+  currentUser: UserModel;
+  users: UserModel[] = [];
 
-  constructor(private _userService: UserService) { }
-
-  ngOnInit() {
-    //this.user = this._userService.getCurrentUser();
+  constructor(private _userService: UserService) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
+  ngOnInit() {
+    this.loadAllUsers();
+  }
+  deleteUser(id: number) {
+      this._userService.delete(id).subscribe(() => { this.loadAllUsers() });
+  }
+
+  private loadAllUsers() {
+      //this.userService.getAll().subscribe(users => { this.users = users; });
+      this._userService.getAll().subscribe(users => { this.users = users; });
+  }
 }

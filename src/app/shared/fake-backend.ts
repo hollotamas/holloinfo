@@ -21,7 +21,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
            if (request.url.endsWith('/api/authenticate') && request.method === 'POST') {
                // find if any user matches login credentials
                let filteredUsers = users.filter(user => {
-                   return user.username === request.body.username && user.password === request.body.password;
+                   return user.email === request.body.email && user.password === request.body.password;
                });
 
                if (filteredUsers.length) {
@@ -29,16 +29,15 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                    let user = filteredUsers[0];
                    let body = {
                        id: user.id,
-                       username: user.username,
-                       firstName: user.firstName,
-                       lastName: user.lastName,
+                       name: user.name,
+                       email: user.email,
                        token: 'fake-jwt-token'
                    };
 
                    return Observable.of(new HttpResponse({ status: 200, body: body }));
                } else {
                    // else return 400 bad request
-                   return Observable.throw('Username or password is incorrect');
+                   return Observable.throw('Az e-mail cím vagy a jelszó nem megfelelő');
                }
            }
 
@@ -49,7 +48,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                    return Observable.of(new HttpResponse({ status: 200, body: users }));
                } else {
                    // return 401 not authorised if token is null or invalid
-                   return Observable.throw('Unauthorised');
+                   return Observable.throw('Nem azonosított felhasználó!');
                }
            }
 
@@ -66,7 +65,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                     return Observable.of(new HttpResponse({ status: 200, body: user }));
                 } else {
                     // return 401 not authorised if token is null or invalid
-                    return Observable.throw('Unauthorised');
+                    return Observable.throw('Nem azonosított felhasználó!');
                 }
             }
 
@@ -76,9 +75,9 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 let newUser = request.body;
 
                 // validation
-                let duplicateUser = users.filter(user => { return user.username === newUser.username; }).length;
+                let duplicateUser = users.filter(user => { return user.email === newUser.email; }).length;
                 if (duplicateUser) {
-                    return Observable.throw('Username "' + newUser.username + '" is already taken');
+                    return Observable.throw('E-mail: "' + newUser.email + '" már regisztrált!');
                 }
 
                 // save new user
@@ -111,7 +110,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                     return Observable.of(new HttpResponse({ status: 200 }));
                 } else {
                     // return 401 not authorised if token is null or invalid
-                    return Observable.throw('Unauthorised');
+                    return Observable.throw('Nem azonosított felhasználó!');
                 }
             }
 
