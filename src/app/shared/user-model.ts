@@ -3,7 +3,8 @@ export class UserModel {
   name: string;
   email: string;
   password: string;
-  cim: string;
+  iskola: string;
+  helyseg: string;
   jogosultsag: number; //0: full, 1: szerkesztő, 2: vendég
 
   constructor(param?: UserModel) {
@@ -19,7 +20,8 @@ export class UserModel {
       name: 'Bruckner Szigfríd',
       email: 'example@example.com',
       password: 'Angular',
-      cim: '1000 Kerekerdő, Fa sor 3.',
+      iskola: 'Kerek Gimi',
+      helyseg: 'Kerekerdő',
       jogosultsag: 0
     };
   }
@@ -30,7 +32,8 @@ export class UserModel {
       name: '',
       email: '',
       password: '',
-      cim: '',
+      iskola: '',
+      helyseg: '',
       jogosultsag: 0
     };
   }

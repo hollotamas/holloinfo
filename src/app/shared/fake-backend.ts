@@ -31,6 +31,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                        id: user.id,
                        name: user.name,
                        email: user.email,
+                       cim: user.cim,
+                       jogosultsag: user.jogosultsag,
                        token: 'fake-jwt-token'
                    };
 

@@ -38,7 +38,8 @@ export class UserService {
         name: 'Vacskamati',
         email: 'vacskamati@example.com',
         password: 'Angular',
-        cim: '1000 Kerekerdő, Fa sor 3.',
+        iskola: 'Kerek Gimi',
+        helyseg: 'Kerekerdő',
         jogosultsag: 0
       },
       {
@@ -46,15 +47,16 @@ export class UserService {
         name: 'Ló Szerafin',
         email: 'szerafin@example.com',
         password: 'Angular',
-        cim: '1000 Kerekerdő, Fa sor 3.',
+        iskola: 'Kerek Gimi',
+        helyseg: 'Kerekerdő',
         jogosultsag: 1
       },
       {
         id: 3,
         name: 'Aromo',
         email: 'aromo@example.com',
-        password: 'Angular',
-        cim: '1000 Kerekerdő, Fa sor 3.',
+        iskola: 'Kerek Gimi',
+        helyseg: 'Kerekerdő',
         jogosultsag: 1
       },
     ];

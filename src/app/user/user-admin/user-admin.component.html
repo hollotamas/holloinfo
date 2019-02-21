@@ -1,0 +1,9 @@
+<div class="container border px-4">
+<h3>All registered users:</h3>
+  <ul>
+      <li *ngFor="let user of users">
+          {{user.name}} ({{user.email}})
+          - <a (click)="deleteUser(user.id)">Delete</a>
+      </li>
+    </ul>
+</div>

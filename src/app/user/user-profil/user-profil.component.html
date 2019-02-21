@@ -1,23 +1,16 @@
 <div class="container border px-4">
   <div class="card" style="width: 18rem;">
     <div class="card-header">
-      {{user.name}}
+      {{currentUser.name}}
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">{{user.email}}</li>
-      <li class="list-group-item">{{user.cim}}</li>
+      <li class="list-group-item">{{currentUser.email}}</li>
+      <li class="list-group-item">{{currentUser.iskola}}</li>
+      <li class="list-group-item">{{currentUser.helyseg}}</li>
     </ul>
     <div class="card-body">
       <a routerLink="/user/edit" class="card-link">Profil szerkesztése</a>
     </div>
   </div>
-
-  <h3>All registered users:</h3>
-    <ul>
-        <li *ngFor="let user of users">
-            {{user.username}} ({{user.firstName}} {{user.lastName}})
-            - <a (click)="deleteUser(user.id)">Delete</a>
-        </li>
-    </ul>
-    <p><a [routerLink]="['user/login']">Logout</a></p>
+  <p><a [routerLink]="['/user/login']">Logout</a></p>
 </div>

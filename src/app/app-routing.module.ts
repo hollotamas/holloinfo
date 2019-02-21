@@ -12,6 +12,7 @@ import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserProfilComponent } from './user/user-profil/user-profil.component';
 import { UserProfilEditComponent } from './user/user-profil-edit/user-profil-edit.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { UserAdminComponent } from './user/user-admin/user-admin.component';
 import { LoggedInGuard } from './shared/logged-in.guard';
 
 
@@ -27,9 +28,10 @@ const routes: Routes = [
    ]},
   {path: 'user',
    children: [
-     {path: '', component: UserProfilComponent, canActivate: [LoggedInGuard]},
+     {path: '', component: UserProfilComponent, canActivate: [LoggedInGuard]}, //
      {path: 'login', component: UserLoginComponent},
-     {path: 'edit', component: UserProfilEditComponent, canActivate: [LoggedInGuard]}
+     {path: 'edit', component: UserProfilEditComponent, canActivate: [LoggedInGuard]},
+     {path: 'useradmin', component: UserAdminComponent, canActivate: [LoggedInGuard]}
    ]},
   {path: 'registration', component: UserRegistrationComponent},
   {path: 'about', component: AboutComponent},
@@ -54,6 +56,7 @@ export class AppRoutingModule {
     UserProfilComponent,
     UserProfilEditComponent,
     UserRegistrationComponent,
+    UserAdminComponent,
     AboutComponent
   ];
 }
