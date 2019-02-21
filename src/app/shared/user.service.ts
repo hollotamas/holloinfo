@@ -12,18 +12,18 @@ export class UserService {
 
   }
   getAll() {
-      return this.http.get<User[]>('/api/users');
+      return this.http.get<UserModel[]>('/api/users');
   }
 
   getById(id: number) {
       return this.http.get('/api/users/' + id);
   }
 
-  create(user: User) {
+  create(user: UserModel) {
       return this.http.post('/api/users', user);
   }
 
-  update(user: User) {
+  update(user: UserModel) {
       return this.http.put('/api/users/' + user.id, user);
   }
 
@@ -37,6 +37,7 @@ export class UserService {
         id: 1,
         name: 'Vacskamati',
         email: 'vacskamati@example.com',
+        password: 'Angular',
         cim: '1000 Kerekerdő, Fa sor 3.',
         jogosultsag: 0
       },
@@ -44,6 +45,7 @@ export class UserService {
         id: 2,
         name: 'Ló Szerafin',
         email: 'szerafin@example.com',
+        password: 'Angular',
         cim: '1000 Kerekerdő, Fa sor 3.',
         jogosultsag: 1
       },
@@ -51,6 +53,7 @@ export class UserService {
         id: 3,
         name: 'Aromo',
         email: 'aromo@example.com',
+        password: 'Angular',
         cim: '1000 Kerekerdő, Fa sor 3.',
         jogosultsag: 1
       },

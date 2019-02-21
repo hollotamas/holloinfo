@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import {} from 'rxjs/add/observable/of';
-import {} from 'rxjs/add/observable/throw';
-import {} from 'rxjs/add/operator/delay';
-import {} from 'rxjs/add/operator/mergeMap';
-import {} from 'rxjs/add/operator/materialize';
-import {} from 'rxjs/add/operator/dematerialize';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/delay';
+import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/operator/materialize';
+import 'rxjs/add/operator/dematerialize';
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {

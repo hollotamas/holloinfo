@@ -43,6 +43,7 @@ import { fakeBackendProvider } from './shared/fake-backend';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    HttpClientModule,
     CollapseModule.forRoot(),
     BsDropdownModule.forRoot(),
     AlertModule.forRoot(),

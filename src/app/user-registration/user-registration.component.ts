@@ -13,6 +13,6 @@ export class UserRegistrationComponent implements OnInit {
   }
 
   regisztracio() {
-    this._userService.regisztracio();
+    //this._userService.regisztracio();
   }
 }
