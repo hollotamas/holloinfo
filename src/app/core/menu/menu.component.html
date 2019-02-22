@@ -57,7 +57,7 @@
           Magamról
         </a>
       </li>
-      <ng-container *ngIf="!_userService.isLoggedIn; else loggedBlock">
+      <ng-container *ngIf="!_authenticationService.isLoggedIn; else loggedBlock">
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/user/login" role="button">
           Belépés
@@ -70,12 +70,17 @@
       </li>
       </ng-container>
       <ng-template #loggedBlock>
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" (click)="logout()">
-          <!-- <i class="fas fa-sign-out-alt text-primary fa-lg"></i> -->
-          Kilépés
-        </a>
-      </li>
+        <li class="nav-item dropdown" dropdown>
+          <a class="nav-link dropdown-toggle" role="button"
+             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+             dropdownToggle>
+            {{_authenticationService.currentUser.name}}
+          </a>
+          <div class="dropdown-menu" *dropdownMenu>
+            <a class="dropdown-item" [routerLink]="['/user/login']">Kilépés</a>
+            <a class="dropdown-item" [routerLink]="['/user']">Adataim</a>
+          </div>
+        </li>
       </ng-template>
   </ul>
   </div>

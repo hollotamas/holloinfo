@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserModel } from './user-model';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs/observable';
+import 'rxjs/add/operator/map';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-
   constructor( private http: HttpClient ) {
-
   }
+
   getAll() {
       return this.http.get<UserModel[]>('/api/users');
   }
@@ -20,6 +21,7 @@ export class UserService {
   }
 
   create(user: UserModel) {
+      //console.log('Create: ', user);
       return this.http.post('/api/users', user);
   }
 
@@ -30,6 +32,8 @@ export class UserService {
   delete(id: number) {
       return this.http.delete('/api/users/' + id);
   }
+
+
 
   private getMockUser() {
     return [

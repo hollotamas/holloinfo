@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserModel } from '../../shared/user-model';
-import { UserService } from '../../shared/user.service';
+import { AuthenticationService } from '../../shared/authentication.service';
 
 @Component({
   selector: 'app-user-profil',
@@ -9,10 +9,9 @@ import { UserService } from '../../shared/user.service';
 })
 export class UserProfilComponent implements OnInit {
   currentUser: UserModel;
-  users: UserModel[] = [];
 
-  constructor(private _userService: UserService) {
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  constructor(private _authenticationService: AuthenticationService ) {
+    this.currentUser =  this._authenticationService.currentUser; //JSON.parse(localStorage.getItem('currentUser'));
   }
 
   ngOnInit() {

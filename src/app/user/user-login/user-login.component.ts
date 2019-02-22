@@ -19,7 +19,7 @@ export class UserLoginComponent implements OnInit {
                private alertService: AlertService ) { }
 
   ngOnInit() {
-    console.log('ngOnInit()');
+    //console.log('ngOnInit()');
     // reset login status
     this.authenticationService.logout();
 
@@ -29,10 +29,11 @@ export class UserLoginComponent implements OnInit {
 
   login() {
       this.loading = true;
-      console.log('login()');
+      //console.log('login()');
       this.authenticationService.login(this.model.email, this.model.password)
           .subscribe(
               data => {
+                 //console.log(data);
                   //this.router.navigate([this.returnUrl]);
                   this.router.navigate([this.returnUrl]);
               },

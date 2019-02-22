@@ -23,19 +23,19 @@ export class UserRegistrationComponent implements OnInit {
   regisztracio() {
     //this._userService.regisztracio();
     this.loading = true;
-
+    //console.log(this.model);
     this._userService.create(this.model)
         .subscribe(
             data => {
                 // set success message and pass true paramater to persist the message after redirecting to the login page
                 this._alertService.success('A regisztráció készen van!', true);
                 this._router.navigate(['/user/login']);
-                console.log('success ',this.model);
+                //console.log('success ',this.model);
             },
             error => {
                 this._alertService.error(error);
                 this.loading = false;
-                console.log('error ',this.model);
+                //console.log('error ',this.model);
             });
 
     }
