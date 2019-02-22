@@ -12,8 +12,7 @@ import { Location } from '@angular/common';
 @Component({
   selector: 'app-erettsegi-detail',
   templateUrl: './erettsegi-detail.component.html',
-  styleUrls: ['./erettsegi-detail.component.css',
-              './bs-datepicker.css']
+  styleUrls: ['./erettsegi-detail.component.css']
 })
 export class ErettsegiDetailComponent implements OnInit {
   public _erettsegiPost: ErettsegiModel;
@@ -57,14 +56,11 @@ export class ErettsegiDetailComponent implements OnInit {
       this._erettsegiService.update(this._erettsegiPost);
     }
 
-    console.log('Form adat',erettsegiForm);
+    //console.log('Form adat',erettsegiForm);
     //ez nem működik
       this._location.back();
 
 
   }
 
-  formatDateSpicker(str) {
-    return str.slice(0,4)+"-"+str.slice(5,7)+"-"+str.slice(8,10)+"T"+str.slice(11,16);
-  }
 }

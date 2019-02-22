@@ -1,8 +1,62 @@
-<div class="container border px-4">
+<!-- <div class="container border px-4">
    <div class="row">
      user-profil-edit works!
    </div>
    <div class="row">
      <button type="button" name="button" routerLink="../">Mentés</button>
    </div>
+</div> -->
+<div class="card">
+  <div class="card-header text-center">
+    {{_currentUser.name}}
+  </div>
+  <div class="card-body">
+    <div class="card-text">
+      <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label" for="name">Felhasználó neve:</label>
+          <div class="col-sm-10">
+            <input type="text" name="name" id="name" class="form-control"
+                   [(ngModel)] = "_currentUser.name"
+                   required
+            >
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="email"class="col-sm-2 col-form-label">E-mail cím (bejelentkezési azonosító)</label>
+          <div class="col-sm-10">
+            <input type="email" name="email" class="form-control"
+                   id="email"
+                   [(ngModel)]="_currentUser.email"
+                   required
+            >
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="iskola" class="col-sm-2 col-form-label">Iskola:</label>
+          <div class="col-sm-10">
+            <input type="text" name="iskola" id="iskola" class="form-control"
+                   [(ngModel)]="_currentUser.iskola"
+            >
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="helyseg" class="col-sm-2 col-form-label">Helység:</label>
+          <div class="col-sm-10">
+            <input type="text" name="helyseg" id="helyseg" class="form-control"
+                   [(ngModel)]="_currentUser.helyseg"
+            >
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-12 text-right">
+            <button type="submit" class="btn bg-primary text-light"
+                    [disabled]="userForm.invalid">
+              Adatok módosítása
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
