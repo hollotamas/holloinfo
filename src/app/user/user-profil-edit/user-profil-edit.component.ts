@@ -11,7 +11,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./user-profil-edit.component.css']
 })
 export class UserProfilEditComponent implements OnInit {
-  public _currenUser: UserModel;
+  public _currentUser: UserModel;
 
   constructor( private _route: ActivatedRoute,
                private _router: Router,
