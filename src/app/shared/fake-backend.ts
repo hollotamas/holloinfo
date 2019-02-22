@@ -14,7 +14,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     // array in local storage for registered users
        let users: any[] = JSON.parse(localStorage.getItem('users')) || [];
-
+       console.log('fake users: ', users);
        // wrap in delayed observable to simulate server api call
        return Observable.of(null).mergeMap(() => {
          // authenticate
@@ -27,11 +27,13 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                if (filteredUsers.length) {
                    // if login details are valid return 200 OK with user details and fake jwt token
                    let user = filteredUsers[0];
+                   //console.log('fake',user);
                    let body = {
                        id: user.id,
                        name: user.name,
                        email: user.email,
-                       cim: user.cim,
+                       iskola: user.iskola,
+                       helyseg: user.helyseg,
                        jogosultsag: user.jogosultsag,
                        token: 'fake-jwt-token'
                    };
@@ -74,7 +76,9 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             // create user
             if (request.url.endsWith('/api/users') && request.method === 'POST') {
                 // get new user object from post body
+
                 let newUser = request.body;
+                //console.log('request body:', newUser);
 
                 // validation
                 let duplicateUser = users.filter(user => { return user.email === newUser.email; }).length;

@@ -14,9 +14,9 @@ export class AuthenticationService {
   constructor( private http: HttpClient ) {
     if (localStorage.getItem('currentUser')) {
             // logged in so return true
-            this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-            this.isLoggedIn = true;
-        }
+      this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      this.isLoggedIn = true;
+    }
   }
 
   login(email: string, password: string) {
@@ -29,7 +29,6 @@ export class AuthenticationService {
                 localStorage.setItem('currentUser', JSON.stringify(user));
                 this.isLoggedIn = true;
                 this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-                console.log('AuthenticationService: ', this.currentUser);
             }
             return user;
         });
@@ -40,5 +39,4 @@ export class AuthenticationService {
       localStorage.removeItem('currentUser');
       this.isLoggedIn = false;
   }
-
 }
