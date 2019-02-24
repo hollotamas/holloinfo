@@ -1,7 +1,7 @@
 <app-erettsegi-tipus></app-erettsegi-tipus>
 
 <div class="row" >
-  <div class="col text-right">
+  <div class="col text-right" *ngIf="_authenticationService.isLoggedIn">
     <button class="btn bg-success text-light py-0 px-1" type="button" routerLink="/erettsegi/0/new"><i class="fas fa-plus-square"></i></button>
   </div>
 </div>
@@ -12,7 +12,7 @@
     ></app-erettsegi-tipus-list-card>
   </div>
 <div class="row">
-  <div class="col text-right">
+  <div class="col text-right" *ngIf="_authenticationService.isLoggedIn">
     <button class="btn bg-success text-light py-0 px-1" type="button" routerLink="/erettsegi/0/new"><i class="fas fa-plus-square"></i></button>
   </div>
 </div>

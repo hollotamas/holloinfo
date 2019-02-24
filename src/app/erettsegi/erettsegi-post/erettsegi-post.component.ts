@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthenticationService } from '../../shared/authentication.service';
 import { ErettsegiModel } from '../../shared/erettsegi/erettsegi-model';
 import { ErettsegiService } from '../../shared/erettsegi/erettsegi.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
@@ -15,6 +16,7 @@ export class ErettsegiPostComponent implements OnInit {
 
   constructor(private _erettsegiService: ErettsegiService,
               private _route: ActivatedRoute,
+              private _authenticationService: AuthenticationService,
               private _sanitizer: DomSanitizer) {
 
     //console.log(this._teljesPost);
@@ -30,5 +32,5 @@ export class ErettsegiPostComponent implements OnInit {
     }
     this.videoUrl =  this._sanitizer.bypassSecurityTrustResourceUrl(this._teljesPost.video);
   }
-  
+
 }

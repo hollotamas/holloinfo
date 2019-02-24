@@ -22,9 +22,9 @@ const routes: Routes = [
    children: [
      {path: '', component: ErettsegiTipusListComponent},
      {path: 'tanacsok', component: ErettsegiTanacsokComponent},
-     {path: ':postID/new', component: ErettsegiDetailComponent},
+     {path: ':postID/new', component: ErettsegiDetailComponent, canActivate: [LoggedInGuard]},
      {path: ':postID/post', component: ErettsegiPostComponent},
-     {path: ':postID/edit', component: ErettsegiDetailComponent}
+     {path: ':postID/edit', component: ErettsegiDetailComponent, canActivate: [LoggedInGuard]}
    ]},
   {path: 'user',
    children: [

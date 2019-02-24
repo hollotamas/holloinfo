@@ -31,7 +31,10 @@
         {{_teljesPost.megjegyzes}}
       </div>
     </div>
-    <a class="btn float-right text-light bg-primary" [routerLink]="['../','edit']">Szerkesztés</a>
+    <div class="car-footer" *ngIf="_authenticationService.isLoggedIn">
+      <a class="btn float-right text-light bg-primary" [routerLink]="['../','edit']">Szerkesztés</a>
+    </div>
+
     </div>
   <div class="card-footer text-muted bg-primary text-light text-right">
     A bejegyzés készült: {{_teljesPost.bejegyzesKeszult}}
