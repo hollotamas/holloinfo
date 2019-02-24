@@ -30,7 +30,7 @@ export class ErettsegiService {
 
   getErettsegiById(id: number) {
     this._erettsegi = this.getAllErettsegi();
-    const e = this._erettsegi.filter(x => x.id == id);
+    const e = this._erettsegi.filter(x => x.id === +id);
     return e.length > 0 ? e[0] : new ErettsegiModel(ErettsegiModel.emptyErettsegi);
   }
 
