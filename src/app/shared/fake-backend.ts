@@ -14,7 +14,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     // array in local storage for registered users
        let users: any[] = JSON.parse(localStorage.getItem('users')) || [];
-       console.log('fake users: ', users);
+       //console.log('fake users: ', users);
        // wrap in delayed observable to simulate server api call
        return Observable.of(null).mergeMap(() => {
          // authenticate
@@ -65,7 +65,6 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                     let id = parseInt(urlParts[urlParts.length - 1]);
                     let matchedUsers = users.filter(user => { return user.id === id; });
                     let user = matchedUsers.length ? matchedUsers[0] : null;
-
                     return Observable.of(new HttpResponse({ status: 200, body: user }));
                 } else {
                     // return 401 not authorised if token is null or invalid

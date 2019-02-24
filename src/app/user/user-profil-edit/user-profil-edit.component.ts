@@ -14,6 +14,7 @@ import { Location } from '@angular/common';
 export class UserProfilEditComponent implements OnInit {
   public _currentUser: UserModel;
   public loading = false;
+  private _updateUser: any = {};
 
   constructor( private _route: ActivatedRoute,
                private _router: Router,
@@ -22,24 +23,40 @@ export class UserProfilEditComponent implements OnInit {
                private _alertService: AlertService,
                private _location: Location ) {
     this._currentUser = this._authenticationService.currentUser;
-    console.log(this._currentUser);
+    console.log('Constructor: ',this._currentUser);
 
   }
 
   ngOnInit() {
   }
 
+  updateUser(param) {
+      return  {
+              id: param.id,
+              name: param.name,
+              email: param.email,
+              iskola: param.iskola,
+              helyseg: param.helyseg,
+              jogosultsag: 1,
+              token: param.token,
+              password: ''
+        }
+  }
+
   update() {
     this.loading = true;
-    console.log('Edit:', this._currentUser);
-    this._userService.update(this._currentUser)
+    //this._currentUser = this.updateUser();
+
+    this._updateUser = this.updateUser(this._currentUser);
+    console.log('update-profil: ',this._updateUser);
+    this._userService.update(this._updateUser)
       .subscribe(
         data=>{
           this._alertService.success('Adatok módosítása megtörtént!',true)
           this._location.back();
         },
         error=>{
-          this._alertService.error('Az adatok mentése sikertelen! '+ JSON.parse(error));
+          this._alertService.error('Az adatok mentése sikertelen! ');
           this.loading = false;
         });
     this._location.back()
