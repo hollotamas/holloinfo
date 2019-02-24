@@ -22,16 +22,16 @@ export class ErettsegiSzintService {
 
   private getMockSzint() {
     return [
-      {
+      new ErettsegiSzintModel({
         id: 1,
         szintNev: 'középszint',
         szintKep: './assets/images/erettsegi/kbetu.png'
-      },
-      {
+      }),
+      new ErettsegiSzintModel({
         id: 2,
         szintNev: 'emeltszint',
         szintKep: './assets/images/erettsegi/ebetu.png'
-      },
+      })
     ];
   }
 }

@@ -62,7 +62,7 @@ export class ErettsegiService {
 
   private getMockData() {
     return [
-      {
+      new ErettsegiModel({
       'id': 1,
       'cim': 'Atlétika',
       'leiras': 'Az atlétika a legrégibb, legnagyobb múltú sportág, amely a természetes mozgásokat, a gyaloglást, a futást, az ugrást és a dobást öleli fel. Ebben a feladatban az atlétikai sportágakat bemutató dokumentumot kell elkészítenie az alábbi leírás és minta alapján. Az elkészítéséhez használja fel az ismerteto.txt UTF-8 kódolású szövegállományt!',
@@ -74,8 +74,8 @@ export class ErettsegiService {
       'erettsegiIdopont': '2017-05-17', //Date
       'tipusId': 1,
       'szintId': 1
-      },
-      {
+      }),
+      new ErettsegiModel({
       'id': 2,
       'cim': 'Gumiabroncs',
       'leiras': 'Az autó és a gumiabroncs egymástól elválaszthatatlan technikai találmány. Ebben a feladatban a gumiabroncs történetét bemutató dokumentumot kell elkészítenie az alábbi leírás és minta alapján. Az elkészítéséhez használja fel a gumitortenet.txt, a vulkanizalas.txt és a fajtak.txt UTF-8 kódolású szövegállományt A dokumentumba beszúrandó képek: dunlop.jpg, goodyear.jpg, szerkezet.jpg.',
@@ -87,8 +87,8 @@ export class ErettsegiService {
       'erettsegiIdopont': '2018-05-17', //Date
       'tipusId': 1,
       'szintId': 1
-      },
-      {
+      }),
+      new ErettsegiModel({
       'id': 3,
       'cim': 'Balatoni komp',
       'leiras': 'A Balatonon a Szántód és Tihany között járó kompon évente több százezer ember és jármű kel át. Az átkelés csak akkor szünetel, ha befagy a tó. Ebben a feladatban a balatoni kompközlekedést bemutató kétoldalas tájékoztatót kell elkészítenie az alábbi leírás és minta alapján. A tájékoztató elkészítéséhez használja fel a kompszov.txt UTF-8 kódolású szövegállományt!',
@@ -100,8 +100,8 @@ export class ErettsegiService {
       'erettsegiIdopont': '2017-05-18', //Date
       'tipusId': 1,
       'szintId': 1
-      },
-      {
+      }),
+      new ErettsegiModel({
       'id': 4,
       'cim': 'Étlap',
       'leiras': 'Az éttermekben a kínálat jelentős része állandó, amelyet időszakonként helyi specialitásokkal egészítenek ki. A Halász étteremben a halételeket cserélik hetente.',
@@ -113,8 +113,8 @@ export class ErettsegiService {
       'erettsegiIdopont': '2013-05-13', //Date
       'tipusId': 1,
       'szintId': 2
-      },
-      {
+      }),
+      new ErettsegiModel({
       'id': 5,
       'cim': 'Halogének',
       'leiras': 'A kémia szakkörre egy diák rövid összefoglalót készít a halogén elemekről. Ebben kell segítenie neki egy bemutató elkészítésével. A prezentáció szövegét a halogenek.txt UTF-8 kódolású szöveges állományban találja. A bemutató elkészítéséhez a következő képeket kell használnia: lombik.png, veszelyes.jpg, fluor.jpg, klor.jpg, brom.jpg és jod.jpg.',
@@ -126,8 +126,8 @@ export class ErettsegiService {
       'erettsegiIdopont': '2017-10-25', //Date
       'tipusId': 2,
       'szintId': 1
-      },
-      {
+      }),
+      new ErettsegiModel({
       'id': 6,
       'cim': 'Vírusok',
       'leiras': 'A fertőző vírusos betegségek ellen gyakran védőoltásokkal védekezünk. Magyarországon a gyerekek tizenöt hónapos korukban kapják meg az MMR oltást. Az oltás három betegség: a kanyaró, a mumpsz és a rubeola ellen véd. Ezen vírusok rövid bemutatására készítsen egy interaktív bemutatót az alábbi leírás és a minta alapján!',
@@ -139,8 +139,8 @@ export class ErettsegiService {
       'erettsegiIdopont': '2010-05-17', //Date
       'tipusId': 2,
       'szintId': 1
-      },
-      {
+      }),
+      new ErettsegiModel({
       'id': 7,
       'cim': 'Parlagfű',
       'leiras': 'Az allergiaszezon legveszélyesebb növénye a parlagfű. Pollenjeinek megjelenésére a nyári időszakban kell számítani. Készítsen weblapot a parlagfű és a terjedése elleni védekezés bemutatására a következő minta és leírás szerint! A feladatban két weboldalt és egy képet kell majd elkészítenie.',
@@ -152,8 +152,8 @@ export class ErettsegiService {
       'erettsegiIdopont': '2017-05-18', //Date
       'tipusId': 3,
       'szintId': 1
-      },
-      {
+      }),
+      new ErettsegiModel({
       'id': 8,
       'cim': 'Népautók',
       'leiras': 'Az videó elején a 2013. májusi magyar nyelvű érettségi adatbázis-kezelés feladat tipikus problémáiról van szó. A XX. századi technikai fejlődés egyik mozgatója és ugyanakkor eredménye a nagyfokú motorizáció. A folyamat – mennyiségileg – akkor lépett nagyot előre, amikor megjelentek a népautók. Bár neve alapján valójában csak a német Volkswagen „bogár” volt az, de a francia Citroën „kacsa” és az olasz Fiat 500 ugyanolyan fontos lépcső volt az autózás mindennapossá válásában.',
@@ -165,8 +165,8 @@ export class ErettsegiService {
       'erettsegiIdopont': '2014-10-17', //Date
       'tipusId': 3,
       'szintId': 2
-      },
-      {
+      }),
+      new ErettsegiModel({
       'id': 9,
       'cim': 'Szarka',
       'leiras': 'A webszerkesztés feladatot a Microsoft SharePoint Designer 2007 programmal oldottam meg. A képek szerkesztését Paint-ben. Készítsen weblapot a városokban egyre gyakoribb madár, a szarka bemutatására a következő minta és leírás szerint! A feladatban két weboldalt és egy képet kell majd elkészítenie',
@@ -178,7 +178,7 @@ export class ErettsegiService {
       'erettsegiIdopont': '2013-05-21', //Date
       'tipusId': 3,
       'szintId': 1
-      }
+      })
     ];
   }
 }

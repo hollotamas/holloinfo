@@ -1,8 +1,8 @@
   <div class="card">
-    <h5 *ngIf="!_erettsegiPost.id; else modify" class="card-header">
+    <h5 *ngIf="!_erettsegiPost.id; else modifyhead" class="card-header">
       Új érettségi bejegyzés létrehozása
     </h5>
-    <ng-template #modify>
+    <ng-template #modifyhead>
       <h5 class="card-header">
         Érettségi bejegyzés módosítása
       </h5>
@@ -106,10 +106,16 @@
           </div>
           <div class="form-group row">
             <div class="col-sm-12 text-right">
-              <button type="submit" class="btn bg-primary text-light"
+              <button type="submit" class="btn bg-primary text-light" *ngIf="!_erettsegiPost.id; else modifybutton"
                       [disabled]="erettsegiForm.invalid">
                 Új bejegyzés mentése
               </button>
+              <ng-template #modifybutton>
+                <button type="submit" class="btn bg-primary text-light"
+                        [disabled]="erettsegiForm.invalid">
+                  Bejegyzés módosítása
+                </button>
+              </ng-template>
             </div>
           </div>
         </form>

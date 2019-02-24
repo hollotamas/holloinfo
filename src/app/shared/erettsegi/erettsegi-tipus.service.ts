@@ -33,36 +33,36 @@ export class ErettsegiTipusService {
 
   private getMockTipus() {
     return [
-        {
+        new ErettsegiTipusModel({
           id: 1,
           tipusNev: 'Szövegszerkesztés',
           szoftverId: 1
-        },
-        {
+        }),
+        new ErettsegiTipusModel({
           id: 2,
           tipusNev: 'Prezentáció',
           szoftverId: 2
-        },
-        {
+        }),
+        new ErettsegiTipusModel({
           id: 3,
           tipusNev: 'Webszerkesztés',
           szoftverId: 3
-        },
-        {
+        }),
+        new ErettsegiTipusModel({
           id: 4,
           tipusNev: 'Táblázatkezelés',
           szoftverId: 4
-        },
-        {
+        }),
+        new ErettsegiTipusModel({
           id: 5,
           tipusNev: 'Adatbázis-kezelés',
           szoftverId: 5
-        },
-        {
+        }),
+        new ErettsegiTipusModel({
           id: 6,
           tipusNev: 'Programozás',
           szoftverId: 6
-        }
+        })
     ];
   }
 }
