@@ -33,7 +33,7 @@ export class UserRegistrationComponent implements OnInit {
                 //console.log('success ',this.model);
             },
             error => {
-                this._alertService.error(error);
+                this._alertService.error('Adatok mentése sikertelen! '+error);
                 this.loading = false;
                 //console.log('error ',this.model);
             });

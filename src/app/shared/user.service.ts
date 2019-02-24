@@ -26,6 +26,7 @@ export class UserService {
   }
 
   update(user: UserModel) {
+    console.log('update:', user);
       return this.http.put('/api/users/' + user.id, user);
   }
 
