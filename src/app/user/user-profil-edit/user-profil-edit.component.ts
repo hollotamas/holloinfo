@@ -23,7 +23,7 @@ export class UserProfilEditComponent implements OnInit {
                private _alertService: AlertService,
                private _location: Location ) {
     this._currentUser = this._authenticationService.currentUser;
-    console.log('Constructor: ',this._currentUser);
+    //console.log('Constructor: ',this._currentUser);
 
   }
 
@@ -37,9 +37,8 @@ export class UserProfilEditComponent implements OnInit {
               email: param.email,
               iskola: param.iskola,
               helyseg: param.helyseg,
-              jogosultsag: 1,
+              jogosultsag: param.jogosultsag,
               token: param.token,
-              password: ''
         }
   }
 

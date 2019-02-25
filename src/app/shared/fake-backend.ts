@@ -100,7 +100,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 // get new user object from post body
                 if (request.headers.get('Authorization') === 'Bearer fake-jwt-token') {
                     let updateUser = request.body;
-                    //console.log('request body:', updateUser);
+                    console.log('request body:', updateUser);
                     // find user by id in users array
                     let urlParts = request.url.split('/');
                     let id = parseInt(urlParts[urlParts.length - 1]);
@@ -113,8 +113,9 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                             users[i].iskola = updateUser.iskola;
                             users[i].helyseg = updateUser.helyseg;
                             users[i].jogosultsag = updateUser.jogosultsag;
-                            // console.log('put user', JSON.stringify(users));
+                            console.log('put user', JSON.stringify(users));
                             localStorage.setItem('users', JSON.stringify(users));
+                            users[i].token = updateUser.token;
                             localStorage.setItem('currentUser', JSON.stringify(users[i]));
                             break;
                         }

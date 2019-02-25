@@ -79,6 +79,12 @@
           <div class="dropdown-menu" *dropdownMenu>
             <a class="dropdown-item" [routerLink]="['/user/login']">Kilépés</a>
             <a class="dropdown-item" [routerLink]="['/user']">Adataim</a>
+            <a class="dropdown-item"
+               [routerLink]="['user/useradmin']"
+               *ngIf="_authenticationService.currentUser.jogosultsag == 0"
+            >
+              Admin
+            </a>
           </div>
         </li>
       </ng-template>
