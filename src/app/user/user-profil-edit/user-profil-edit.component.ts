@@ -59,6 +59,6 @@ export class UserProfilEditComponent implements OnInit {
           this._alertService.error('Az adatok mentése sikertelen! ');
           this.loading = false;
         });
-    this._location.back()
+    this._router.navigate['../'];
   }
 }

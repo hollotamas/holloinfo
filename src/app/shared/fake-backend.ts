@@ -18,6 +18,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
        // wrap in delayed observable to simulate server api call
        return Observable.of(null).mergeMap(() => {
          // authenticate
+
            if (request.url.endsWith('/api/authenticate') && request.method === 'POST') {
                // find if any user matches login credentials
                let filteredUsers = users.filter(user => {
@@ -92,6 +93,37 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
                 // respond 200 OK
                 return Observable.of(new HttpResponse({ status: 200 }));
+            }
+
+            // update user
+            if (request.url.match(/\/api\/users\/\d+$/) && request.method === 'PUT') {
+                // get new user object from post body
+                if (request.headers.get('Authorization') === 'Bearer fake-jwt-token') {
+                    let updateUser = request.body;
+                    //console.log('request body:', updateUser);
+                    // find user by id in users array
+                    let urlParts = request.url.split('/');
+                    let id = parseInt(urlParts[urlParts.length - 1]);
+                    for (let i = 0; i < users.length; i++) {
+                        let user = users[i];
+                        if (user.id === id) {
+                            // delete user
+                            users[i].name = updateUser.name;
+                            users[i].email = updateUser.email;
+                            users[i].iskola = updateUser.iskola;
+                            users[i].helyseg = updateUser.helyseg;
+                            users[i].jogosultsag = updateUser.jogosultsag;
+                            // console.log('put user', JSON.stringify(users));
+                            localStorage.setItem('users', JSON.stringify(users));
+                            localStorage.setItem('currentUser', JSON.stringify(users[i]));
+                            break;
+                        }
+                    }
+                    return Observable.of(new HttpResponse({ status: 200 }));
+                } else {
+                    // return 401 not authorised if token is null or invalid
+                    return Observable.throw('Nem azonosított felhasználó!');
+                }
             }
 
             // delete user
