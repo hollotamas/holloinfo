@@ -17,7 +17,7 @@ export class UserRegistrationComponent implements OnInit {
                private _alertService: AlertService) { }
 
   ngOnInit() {
-    console.log('ngOnInit ',this.model);
+    //console.log('ngOnInit ',this.model);
   }
 
   updateUser(param) {
