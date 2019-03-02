@@ -18,18 +18,30 @@
               <input type="text" class="form-control" name="iskola" id="iskola" [(ngModel)]="model.iskola" #iskola="ngModel" />
               <small id="iskolaHelp" class="form-text text-muted">Az iskolád megadása nem kötelező!</small>
           </div>
-          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !helyseg.valid }">
+          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !iskola.valid }">
               <label for="helyseg">Iskola helysége:</label>
               <input type="text" class="form-control" name="helyseg" id="helyseg" [(ngModel)]="model.helyseg" #helyseg="ngModel" />
               <small id="helysegHelp" class="form-text text-muted">Az iskolád helységének megadása nem kötelező!</small>
           </div>
           <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
               <label for="password">Jelszó:</label>
-              <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
-              <div *ngIf="f.submitted && !password.valid" class="help-block">A jelszó megadása kötelező!</div>
+              <input type="password" class="form-control" id="password"
+                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{3,5}"
+                     [(ngModel)]="model.password" name="password" #password="ngModel"
+                     required /> <!-- [(ngModel)]="model.password" -->
+          </div>
+          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !p2.valid && (p1.value !== p2.value)}">
+              <label for="p2">Jelszó megerősítése:</label>
+              <input type="password" class="form-control" id="p2"
+                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{3,5}"
+                     ngModel name="p2" #p2="ngModel"
+                     required />
+              <alert class="danger" *ngIf="p2.touched && (p2.value !== password.value)">
+                Nem egyezik a két jelszó!
+              </alert>
           </div>
           <div class="form-group">
-              <button [disabled]="loading" class="btn btn-primary">Regisztráció mentése</button>
+              <button type="submit" [disabled]="loading ||f.invalid || (password.value !== p2.value)" class="btn btn-primary">Regisztráció mentése</button>
               <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
               <a [routerLink]="['/user/login']" class="btn btn-link">Mégse</a>
           </div>
