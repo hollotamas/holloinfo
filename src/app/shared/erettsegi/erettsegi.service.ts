@@ -40,7 +40,7 @@ export class ErettsegiService {
     this._erettsegi = this._erettsegi
       .map( er => er.id == param.id ? {...param} : er );
 
-    console.log('ErettsegiModel', this.getAllErettsegi());
+    //console.log('ErettsegiModel', this.getAllErettsegi());
   }
 
   create(param: ErettsegiModel) {
