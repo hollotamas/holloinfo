@@ -14,7 +14,8 @@ import { UserProfilEditComponent } from './user/user-profil-edit/user-profil-edi
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { UserAdminComponent } from './user/user-admin/user-admin.component';
 import { LoggedInGuard } from './shared/logged-in.guard';
-
+import { EcdlComponent } from './ecdl/ecdl.component';
+import { HasznosComponent } from './hasznos/hasznos.component';
 
 const routes: Routes = [
   {path: 'tartalom', component: TartalomComponent},
@@ -33,6 +34,8 @@ const routes: Routes = [
      {path: 'edit', component: UserProfilEditComponent, canActivate: [LoggedInGuard]},
      {path: 'useradmin', component: UserAdminComponent, canActivate: [LoggedInGuard]}
    ]},
+  {path: 'ecdl', component: EcdlComponent},
+  {path: 'hasznos', component: HasznosComponent},
   {path: 'registration', component: UserRegistrationComponent},
   {path: 'about', component: AboutComponent},
   {path: '', redirectTo: '/tartalom', pathMatch: 'full' },
@@ -55,6 +58,8 @@ export class AppRoutingModule {
     UserLoginComponent,
     UserProfilComponent,
     UserProfilEditComponent,
+    EcdlComponent,
+    HasznosComponent,
     UserRegistrationComponent,
     UserAdminComponent,
     AboutComponent
