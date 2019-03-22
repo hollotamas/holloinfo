@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   database: {
-    baseUrl: "http://localhost:1111"
+    baseUrl: "http://holloinfo/api"
   }
 };
 
