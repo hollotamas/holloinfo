@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Lato|Libre+Baskerville');
+
+/*
+$sotet:   #090934 !default; // #c4a57c #9e4624
+$vilagos: #e5faf4 !default;
+$kozep1:  #336b59 !default;
+$kozep2:  #ae8e6b !default;
+$kozep3:  #8181ee !default;
+*/
+
+body {
+  font-family: 'Lato', sans-serif !important;
+  min-height: 100%;
+  margin: 0;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6,
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Libre Baskerville', serif !important;
+}
+/* Színek */
+.btn-primary, .bg-primary {
+  background-color: #090934;
+}
+
+.text-primary {
+  color: #090934;
+}
+
+.btn-light, .bg-light {
+  background-color: #e5faf4;
+}
+
+.text-light {
+  color: #e5faf4;
+}
+
+.btn-success, .bg-success {
+  background-color: #336b59;
+}
+
+.text-success {
+  color: #336b59;
+}
+
+.btn-info, .bg-info {
+  background-color: #ae8e6b;
+}
+
+.text-info {
+  color: #ae8e6b;
+}
+
+.btn-secondary, .bg-secondary {
+  background-color: #8181ee;
+}
+
+.text-secondary {
+  color: #8181ee;
+}
+
+.container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.lead {
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 100 !important;
+}

@@ -1,0 +1,150 @@
+  <div class="card">
+    <h5 *ngIf="!_erettsegiPost.id; else modifyhead" class="card-header">
+      Új érettségi bejegyzés létrehozása
+    </h5>
+    <ng-template #modifyhead>
+      <h5 class="card-header">
+        Érettségi bejegyzés módosítása
+      </h5>
+    </ng-template>
+    <div class="card-body">
+      <div class="card-text">
+        <form #erettsegiForm="ngForm" (ngSubmit)="onSubmit(erettsegiForm.value)" novalidate>
+          <div class="form-group row">
+            <label for="feladatCim" class="col-sm-2 col-form-label">Feladat címe:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="feladatCim" placeholder=""
+                     [(ngModel)] = "_erettsegiPost.cim"
+                     name="cim"
+                     #cim="ngModel"
+                     required>
+               <alert type="danger" *ngIf="cim.touched && cim.invalid">
+                 Kérlek adj címet a bejegyzéshez!
+               </alert>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="feladatLeiras" class="col-sm-2 col-form-label">Feladat leírása:</label>
+            <div class="col-sm-10">
+              <textarea name="leiras" rows="4"
+                        class="form-control" id="feladatLeiras"
+                        [(ngModel)]="_erettsegiPost.leiras"
+                        #leiras="ngModel"
+                        required>
+              </textarea>
+              <alert type="danger" *ngIf="leiras.touched && leiras.invalid">
+                Kérlek adj meg leírást a bejegyzéshez!
+              </alert>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="leirasURL" class="col-sm-2 col-form-label">Leírás URL:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="leirasURL" placeholder=""
+                     [(ngModel)]="_erettsegiPost.feladatUrl"
+                     name="feladatUrl"
+                     >
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="forrasURL" class="col-sm-2 col-form-label">Forrás URL:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="forrasURL" placeholder=""
+                     [(ngModel)]="_erettsegiPost.forrasUrl"
+                     name="forrasUrl"
+                     >
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="videoURL" class="col-sm-2 col-form-label">Videó URL:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="videoURL" placeholder=""
+                     [(ngModel)]="_erettsegiPost.video"
+                     name="video"
+                     >
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="erettsegiIdeje" class="col-sm-2 col-form-label">Érettségi ideje:</label>
+            <div class="col-sm-4">
+              <input type="date" class="form-control" id="erettsegiIdeje"
+                     name="erettsegiIdopont"
+                     [(ngModel)]="_erettsegiPost.erettsegiIdopont"
+                     #erettsegiIdopont="ngModel"
+                     required>
+                     <alert type="danger" *ngIf="erettsegiIdopont.touched && erettsegiIdopont.invalid">
+                       Kérlek add meg az érettségi időpontját!
+                     </alert>
+              </div>
+              <label for="bejegyzesKeszult" class="col-sm-2 col-form-label text-right">Bejegyzés ideje:</label>
+              <div class="col-sm-4">
+                <input type="date" class="form-control" id="bejegyzesKeszult"
+                       name="bejegyzesKeszult"
+                       [(ngModel)]="_erettsegiPost.bejegyzesKeszult"
+                       #bejegyzesKeszult="ngModel"
+                       required>
+                       <alert type="danger" *ngIf="bejegyzesKeszult.touched && bejegyzesKeszult.invalid">
+                         Kérlek add meg mikor készült a bejegyzés!
+                       </alert>
+                </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="szint">Érettségi szintje:</label>
+            <div class="col-sm-10">
+              <select class="form-control" id="szint"
+                      [(ngModel)]="_erettsegiPost.szintId"
+                      name="szintId"
+                      #szintId="ngModel"
+                      required>
+                <option selected hidden disabled value="0">Válassz szintet!</option>
+                <option *ngFor="let szint of _erettsegiSzint" [value]="szint.id">{{szint.szintNev}}</option>
+              </select>
+              <alert type="danger" *ngIf="szintId.touched && szintId.pristine">
+                Kérlek add meg az érettségi szintjét!
+              </alert>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="tipus">Érettségi tipusa:</label>
+            <div class="col-sm-10">
+              <select class="form-control" id="tipus"
+                      [(ngModel)]="_erettsegiPost.tipusId"
+                      name="tipusId"
+                      #tipusId="ngModel"
+                      required>
+                <option selected hidden disabled value="0">Válassz tipust!</option>
+                <option *ngFor="let tipus of _erettsegiTipus" [value]="tipus.id">{{tipus.tipusNev}} - {{tipus.szoftver.szoftverNev}}</option>
+              </select>
+              <alert type="danger" *ngIf="tipusId.touched && tipusId.pristine">
+                Kérlek add meg az érettségi típusát!
+              </alert>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="megjegyzes" class="col-sm-2 col-form-label">Megjegyzés:</label>
+            <div class="col-sm-10">
+              <textarea name="megjegyzes" rows="4"
+                        class="form-control" id="megjegyzes"
+                        [(ngModel)]="_erettsegiPost.megjegyzes">
+              </textarea>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-12 text-right">
+              <button type="submit" class="btn bg-primary text-light" *ngIf="!_erettsegiPost.id; else modifybutton"
+                      [disabled]="erettsegiForm.invalid || tipusId.pristine || szintId.pristine">
+                Új bejegyzés mentése
+              </button>
+              <ng-template #modifybutton>
+                <button type="submit" class="btn bg-primary text-light"
+                        [disabled]="erettsegiForm.invalid">
+                  Bejegyzés módosítása
+                </button>
+              </ng-template>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

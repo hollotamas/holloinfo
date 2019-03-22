@@ -1,0 +1,16 @@
+<div class="container border px-4">
+  <div class="card" style="width: 18rem;">
+    <div class="card-header">
+      {{currentUser.name}}
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{currentUser.email}}</li>
+      <li class="list-group-item">{{currentUser.iskola}}</li>
+      <li class="list-group-item">{{currentUser.helyseg}}</li>
+    </ul>
+    <div class="card-body">
+      <a routerLink="/user/edit" class="card-link">Profil szerkesztése</a>
+    </div>
+  </div>
+  <p><a [routerLink]="['/user/login']">Logout</a></p>
+</div>

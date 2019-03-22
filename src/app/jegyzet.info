@@ -1,0 +1,167 @@
+cmd-ben
+cd holloinfo
+ng serve --open
+
+giten keresd angular-cli
+story link alatt különböző kiegészítőket tudsz hozzáadni
+már hozzáadva bootstrap, font-awesome
+
+font-awesome kiegészítve, webfonts és all.css
+
+generate link alatt új component hozzáadása a honlaphoz
+
+src/style.css globális css
+component.css adott lokális css
+
+https://angular.io/guide/displaying-data lista megjeleínése HTML listában,
+*ngFor, de itt van példa a *ngIf
+
+Események kezelése:
+https://angular.io/guide/user-input
+
+element () --> Események [] --> Properties (tulajdonság)
+<button (click)="esemeny()" [disabled] = "bekapcs">Gomb</button>
+
+Itt tartok:
+Első projekt és Component-ek III. rész 40 perc
+
+A nem működik a bootstrap collapse, dropdown
+Megoldás:
+https://valor-software.com/ngx-bootstrap/#/collapse
+https://valor-software.com/ngx-bootstrap/#/dropdowns
+
+Itt tartok:
+Alap építő elemek I. rész 34 perc
+json tömb deklarlása szűrrése, megjelenítése
+input tartalom átadás 38-40 perc
+
+Spread operator ...args 55 perc
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+
+Paraméter átadás class példányosításakor
+Object.assign constructor(param: model) 59 perc
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+
+reduce() vissza add egy függvény által meghatározott értéket egy listából 1:22 perc
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+
+Itt tartok:
+Alap építő elemek II. rész 0:13:00
+Refaktor --> Javítom a konstruktor paramétereit később, akkor bárhol használtam javítja a hivásokat is.
+Példa az űrlap szerkesztésre Mentés, Törlés, Szerkesztés.
+
+0:47:00 környékén
+pipe beszúrás
+https://angular.io/guide/pipes
+
+Itt tartok:
+Na, csináljuk már! I. rész
+10 percnél valamiért kikapcsolta a spec állományok fordítását???
+
+00:32:00
+Routing elmélet szarul
+
+00:54:00
+tartalom component - ami nem állandó azt kiszervezte. A tartalom lesz a nyitó oldal
+
+01:05:00 Itt tartok. Működika routing modul és a tartalom beszúrva a routing-outlet-be.
+
+01:07:00 Page Not Found oldal és routerLink vagyis hivatkozás lérehozása, routing táblába illesztése,
+kezdőoldal megadásáa a routingban.
+
+Itt tartok:
+Na, csináljuk már! II. rész
+00:11:56 Gyermek tartalom componenten belül Pl: Szövegszerkesztés gyermekei a szövegszerkesztés posztok
+00:28:00 router-outlet több egy oldalon name tulajdonsággal fűszerezve röviden.
+00:48:00 Felhasználó rész létrehozása. Bekötötte a user logikáját
+00:58:00 Kialakította a jegy vásárlás list és eladás struktúrát is.
+01:04:00 Refaktor -  könyvtár struktúra átrendezése
+01:16:00 routerLinkActive="active" a navbarban a bootstrap activ tulajdonságát ráteszi az látogatott menüre.
+01:25:00 A fejléc oldalakhoz rendelése <ng-content> valamint <ng-content select=""> a fejlévben lévő elemek kiválasztása.
+
+Itt tartok:
+Formok, Servicek és építkezés I. rész
+00:18:00 Service kezdetek elmélet nem értettem semmit 00:25-ig
+00:25:15 sevice generálás
+00:30 ErettsegiModel osztály létrehozása konstruktor parameterezése
+00:45 Service konstruktorának feltöltése mokka adatokkal (mokk adat, amelyik nem dinamikus, hanem beégetett csak amíg a programstruktúra készül.)
+01:00:00 Az érettségi lista feltöltése service ngFor segítségével a mokk adatokkal remélhetőleg
+01:10:00 környékén a sevice bekötése zajlik és az ErettsegiModel erettsegi-t-l-cardban megjelnítéséhez szükséges ismeretek
+
+Összefoglalás:
+1. Service létrehozása - ő fogja szolgáltatni majd az adatokat a componentnek
+2. A service importálasra kerül az app.modul.ts.be és bejegyzésre a providers tömbbe.
+3. A megjelenítendő adat modelje egy osztály, amely megfelel az adatbázisban szereplő adatoknak (erettsegi-model.ts)
+4. Az erettsegi.service.ts feladata, hogy bárhonnan is megszerezze a modelnek megfelelő adatokat és egy pl: getAll..() függvénnyel majd odaadja annak aki kéri.
+5. Az első felhasználója az adatoknak az erettsegi-tipus-list.component.ts, akinek importálnia kell a service-t és a modelt is.
+6. Majd példányosítani egy publikus tömböt, amely erettsegiModel osztályba tartozik.
+7. Valamint a konstruktorában feltölteni a tömböt (erettsegi) a getAll..() függvény segítségével.
+8. Az erettsegi-tipus-list.component.html ezek után már egy jól elhelyezett *ngFor segítségével ki tudja venni a tömbből az adatokat
+9. és át tudja adni egyesével az adatokat megjelenítő erettsegi-tipus-list-card.componentnek.
+10. Az adat megjelenítő component (erettsegi-tipus-list-card.component.ts) egyszerre egy adatot kap az *ngFor miatt, de ezt fogania kell.
+11. Ezért a erettsegi-tipus-list-card.component.ts-ben kell egy @Input és a hozzá tartozó import.
+12. Ha fogadtuk az adatokat, akkor már a {{}} szerkezettben a megfelelő adathivatkozással megjelenik az adat.
+
+
+Itt tartok: 01:16:00 Itt publikálja a csávó azt amit leírtam és elkészített.
+01:20:00 környékén reduce vagyis egy tömb elemeinek átstruktúrálása. (erettsegi-tipus-list.componnt.ts)
+
+Itt tartok:
+Formok, Servicek és építkezés II. rész
+00:03:00 UserModel osztály és service létrehozása
+00:12:00 Ál Belépés és kilépés a userrel
+
+Itt tartok
+00:26:00 Regisztráció is elkészül
+
+Itt tartok:
+00:39:00 Bootstrap Alertek használata
+Nagy nehezen rávettük a login-component-t, hogy hiba esetés alert boxot jelenítsen meg.
+
+Itt tartok:
+01:04:00 Menü elemek megjelenítése és eltüntetése a bejelentkezéstől függően 01:14-ig
+
+Itt tartok:
+Kommunikáció, navigálás és masni a projektünkre I. rész
+00:08:00 Környékén Az alap model kiegészítése más modellekből számazó adatokkal
+Például: Jegy adatai az alap model, de az eladó adatait a getAll() meghívásakor hozzáteszi
+Nem haladtama videóval, viszont megoldottam az érettségi-tipus-szoftver-szint problémáját servicekkel.
+
+00:31:00 authGuarg Vagyis bejelenkezés felügyelete ez is egy service
+https://angular.io/guide/router
+00:40 itt már védve a /user és /user/edit
+
+Itt elakadtam, mert az embed video nem megy saját IQ-ból
+https://www.youtube.com/watch?v=2JeKfQ2r2r8 hasznosnak tűnik!
+Megoldás: https://angular.io/guide/security#xss ez a jó
+
+Itt tartok:
+01.04:00 Megoldva az új érettségi bejegyzés és módosítás, tudok route segítségével postID-t olvasni az url-ből.
+Hiányzik a form, amelybe beesnek a módosítandó adatok, vagy az új bejegyzés, ez most jön.
+01:10:00-01:37:00 Form adat küldés kapás működése update és create elhelyezése.
+
+Itt tartok:
+Kommunikáció, navigálás és masni a projektünkre II. rész
+00:05 Form validálás
+Innen fire base hegyek még nem tudom, hogy kell-e
+
+Itt tartok:
++1 alkalom I. rész
+00:26 javítgatom a kódom, mock adat kiszervezés a szervice-k ból meg ilyenek
+
+http://jasonwatmore.com/post/2016/09/29/angular-2-user-registration-and-login-example-tutorial
+Ezt nem adtam hozzá:
+Facebook és egy social média
+http://jasonwatmore.com/post/2018/06/01/angular-2-social-sharing-buttons-for-facebook-google-plus-twitter-linkedin-and-pinterest
+
+01:05:00-tól jelszó megerősítése
+01:20:00- observable .filter .map .reduce
+
+Itt tartok
+15:26   Enviroment beállítása
+
+Ezt a neten találtam: php, mysql, angular :)
+https://phpenthusiast.com/blog/develop-angular-php-app-getting-the-list-of-items
+Szerintem király
+https://www.youtube.com/watch?v=UVKvLYk8sck
+https://www.youtube.com/watch?v=h6JyFWq3Zhs

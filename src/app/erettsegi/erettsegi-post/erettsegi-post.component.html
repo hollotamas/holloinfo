@@ -1,0 +1,42 @@
+<div class="card">
+  <div class="card-header text-light bg-primary">
+    {{_teljesPost.cim}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title text-info">Érettségi időpontja: {{_teljesPost.erettsegiIdopont}}</h5>
+    <div class="row">
+      <div class="col-md-12 col-lg-8">
+        <p class="card-text text-primary">{{_teljesPost.leiras}}</p>
+        <h5 class="card-title text-primary">A feladat teljes leírása az oktatas.hu-ról</h5>
+        <p class="card-text text-primary">
+          <a href="{{_teljesPost.feladatUrl}}" target="_blank">
+            {{_teljesPost.feladatUrl}}
+          </a>
+        </p>
+        <h5 class="card-title text-primary">A feladat forrásaállományai az oktatas.hu-ról</h5>
+        <p class="card-text text-primary">
+          <a href="{{_teljesPost.forrasUrl}}" target="_blank">
+            {{_teljesPost.forrasUrl}}
+          </a>
+        </p>
+      </div>
+      <div class="col-md-12 col-lg-4">
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" [src]="videoUrl" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        {{_teljesPost.megjegyzes}}
+      </div>
+    </div>
+    <div class="car-footer" *ngIf="_authenticationService.isLoggedIn">
+      <a class="btn float-right text-light bg-primary" [routerLink]="['../','edit']">Szerkesztés</a>
+    </div>
+
+    </div>
+  <div class="card-footer text-muted bg-primary text-light text-right">
+    A bejegyzés készült: {{_teljesPost.bejegyzesKeszult}}
+  </div>
+</div>

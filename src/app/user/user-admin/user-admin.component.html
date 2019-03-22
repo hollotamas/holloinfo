@@ -1,0 +1,15 @@
+<div class="container border px-4">
+<h3>Regisztrált felhaszálók:</h3>
+  <div class="row border p-2 mb-2" *ngFor="let user of users">
+    <div class="col-10">
+      {{user.name}}<br>
+      {{user.iskola}}<br>
+      {{user.helyseg}}<br>
+    </div>
+    <div class="col-2 h1">
+      <a (click)="deleteUser(user.id)">
+        <i class="fas fa-user-minus"></i>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,94 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-info">
+  <a class="navbar-brand" routerLink="/tartalom">
+    <i class="fas fa-home fa-lg text-primary"></i>
+  </a>
+  <button class="navbar-toggler" type="button"
+          (click)="isCollapsed = !isCollapsed"
+          data-toggle="collapse"
+          data-target="#fomenu"
+          aria-controls="fomenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="fomenu" [collapse]="isCollapsed">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/erettsegi" role="button">
+          Érettségi feladatok megoldása
+        </a>
+      </li>
+      <li class="nav-item dropdown" dropdown>
+        <a class="nav-link dropdown-toggle" routerLink="" role="button"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+           dropdownToggle>
+          Programozás
+        </a>
+        <div class="dropdown-menu" *dropdownMenu>
+          <a class="dropdown-item" routerLink="">Scratch</a>
+          <a class="dropdown-item" routerLink="">Python</a>
+          <a class="dropdown-item" routerLink="">C#</a>
+          <a class="dropdown-item" routerLink="">LEGO robot programozása</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" role="button">
+          ECDL
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="" role="button">
+          Hasznos linkek
+        </a>
+      </li>
+      <li class="nav-item dropdown" routerLinkActive="active" routerLink="" *dropdown>
+        <a class="nav-link dropdown-toggle" role="button"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+           dropdownToggle>
+          Minden más
+        </a>
+        <div class="dropdown-menu" *dropdownMenu>
+          <a class="dropdown-item" routerLink="">Szakdolgozatok</a>
+          <a class="dropdown-item" routerLink="">Mesterprogram</a>
+          <a class="dropdown-item" routerLink="">Gondolatok innen-onnan</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/about" role="button">
+          Magamról
+        </a>
+      </li>
+      <ng-container *ngIf="!_authenticationService.isLoggedIn; else loggedBlock">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/user/login" role="button">
+          Belépés
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/registration" role="button">
+          Regisztráció
+        </a>
+      </li>
+      </ng-container>
+      <ng-template #loggedBlock>
+        <li class="nav-item dropdown" dropdown>
+          <a class="nav-link dropdown-toggle" role="button"
+             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+             dropdownToggle>
+            {{_authenticationService.currentUser.name}}
+          </a>
+          <div class="dropdown-menu" *dropdownMenu>
+            <a class="dropdown-item" [routerLink]="['/user/login']">Kilépés</a>
+            <a class="dropdown-item" [routerLink]="['/user']">Adataim</a>
+            <a class="dropdown-item"
+               [routerLink]="['user/useradmin']"
+               *ngIf="_authenticationService.currentUser.jogosultsag == 0"
+            >
+              Admin
+            </a>
+          </div>
+        </li>
+      </ng-template>
+  </ul>
+  </div>
+
+</nav>
